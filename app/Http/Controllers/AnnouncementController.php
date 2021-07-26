@@ -16,9 +16,13 @@ class AnnouncementController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
-    public function index()
+    public function index($category=NULL)
     {
-        $announcements = Announcement::all();
+        if($category){
+            $announcements = Announcement::where('category_id', $category)->get();
+        }else{
+            $announcements = Announcement::all();
+        }
         return view('announcements.index', compact('announcements'));
     }
 

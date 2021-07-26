@@ -9,6 +9,12 @@ class Announcement extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'description',
+        'price'
+    ];
+
     public function category(){
         $this->belongsTo(Category::class);
     }

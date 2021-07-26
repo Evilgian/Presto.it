@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Http\Requests\AnnouncementRequest;
 
 class AnnouncementController extends Controller
 {
@@ -17,7 +18,8 @@ class AnnouncementController extends Controller
     }
     public function index()
     {
-        //
+        $announcements = Announcement::all();
+        return view('announcements.index', compact('announcements'));
     }
 
     /**
@@ -36,9 +38,16 @@ class AnnouncementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnnouncementRequest $request)
     {
-        //
+        $announcement = Announcement::create([
+            'title'=> $request->input('title'),
+            'description'=> $request->input('description'),
+            'category_id'=> $request->input('category'),
+            'price'=> $request->input('price')
+        ]);
+
+        return redirect(route('homepage'))->with('message', 'Il tuo annuncio è stato salvato');
     }
 
     /**

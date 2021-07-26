@@ -19,4 +19,6 @@ Route::get('/', function () {
 })->name('homepage');
 
 //! Rotte annunci
-Route::get('/annunci/nuovo', [AnnouncementController::class, 'create'])->name('announcements.create');
+Route::get('/annunci/nuovo', [AnnouncementController::class, 'create'])->name('announcement.create');
+Route::post('/annunci/salva', [AnnouncementController::class, 'store'])->name('announcement.store');
+Route::get('/annunci', [AnnouncementController::class, 'index'])->name('announcements.index');

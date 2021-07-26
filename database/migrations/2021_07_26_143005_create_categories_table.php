@@ -20,8 +20,8 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
 
-        $categories=[
-            'Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 'Sport', 'Immobili', 'Telefoni', 'Arredamento'
+        $categories = [
+            'Motori', 'Immobili', 'Lavoro e Servizi', 'Elettronica', 'Abbigliamento e Accessori', 'Tutto per la casa', 'Sport', 'Hobby', 'Tutto per i bambini', 'Animali'
         ];
 
         foreach($categories as $category){

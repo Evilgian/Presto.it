@@ -71,7 +71,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
-    {
+    { 
         if ($request->file('img')){
             $user->img = $request->file('img')->store('public/img/users');
         }

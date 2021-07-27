@@ -1,5 +1,6 @@
 <x-layout>
     <h1>NUOVO ARTICOLO</h1>
+    {{-- DISPLAY VALIDATION ERRORS --}}
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -7,9 +8,17 @@
                     <li>{{$error}}</li>
                 @endforeach
             </ul>
-        </div>
-        
+        </div>   
     @endif
+    {{-- CONFIRM REVIEW POSTED --}}
+    @if(session('message'))
+      <div class="col-12 col-md-6 offset-md-3 mt-5">
+        <div class="alert alert-success">
+        {{session('message')}}
+        </div>
+      </div>
+    @endif
+
     <form method="POST" action="{{route('announcement.store')}}">
         @csrf
         <div class="mb-3">

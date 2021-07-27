@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AnnouncementRequest;
 
 class AnnouncementController extends Controller
@@ -17,6 +18,15 @@ class AnnouncementController extends Controller
         $this->middleware('auth')->except(['index', 'show']);
     }
 
+    public function indexByUser($user=NULL){
+        if($user){
+            $announcements = Announcement::where('user_id', $user)->orderBy('id', 'DESC')->get();
+        }
+        else {
+            $announcements = Announcement::where('user_id', Auth::id())->orderBy('id', 'DESC')->get();
+        }
+        return view('announcements.index', compact('announcements'));
+    }
     public function index($category=NULL)
     {
         if($category){
@@ -49,6 +59,7 @@ class AnnouncementController extends Controller
             'title'=> $request->input('title'),
             'description'=> $request->input('description'),
             'category_id'=> $request->input('category'),
+            'user_id' => Auth::id(),
             'price'=> $request->input('price')
         ]);
 

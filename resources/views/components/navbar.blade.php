@@ -36,8 +36,8 @@
                         {{Auth::user()->name}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="{{route('user.show')}}">Profilo</a></li>
+                        <li><a class="dropdown-item" href="{{route('user.announcements')}}">I tuoi annunci</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Logout</a>
                             <form action="{{route('logout')}}" method="POST" id="logout-form">@csrf</form>

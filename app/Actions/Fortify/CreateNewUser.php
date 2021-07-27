@@ -30,12 +30,21 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'password' => $this->passwordRules(),
+            'img' => 'image'
         ])->validate();
+        
+        if(isset($input['img'])){
+            $img = $input['img']->store('public/img/users');
+        }
+        else{
+            $img = null;
+        }
 
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'img' => $img
         ]);
     }
 }

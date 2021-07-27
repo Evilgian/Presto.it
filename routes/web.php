@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AnnouncementController;
 
@@ -22,3 +23,10 @@ Route::get('/annunci/nuovo', [AnnouncementController::class, 'create'])->name('a
 Route::post('/annunci/salva', [AnnouncementController::class, 'store'])->name('announcement.store');
 Route::get('/annunci/{category?}', [AnnouncementController::class, 'index'])->name('announcements.index');
 Route::get('/annunci/show/{announcement}', [AnnouncementController::class, 'show'])->name('announcement.show');
+
+
+//! Rotte utenti
+Route::get('/profilo', [UserController::class, 'show'])->name('user.show');
+Route::get('/profilo/edit', [UserController::class, 'edit'])->name('user.edit');
+Route::put('/profilo/update/{user}', [UserController::class, 'update'])->name('user.update');
+Route::get('/riepilogo/annunci/{user?}', [AnnouncementController::class, 'indexByUser'])->name('user.announcements');

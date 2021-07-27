@@ -16,7 +16,7 @@
                       </div>
                       <div class="swiper-slide">
                         <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/238/200/300)">
-                          <img src="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLWTdaX3J5b1VueDg" class="entity-img" />
+                          <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
                           <p class="title"></p>
@@ -25,7 +25,7 @@
                       </div>
                       <div class="swiper-slide">
                         <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/239/200/300)">
-                          <img src="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLRml1b3B6eXVqQ2s" class="entity-img" />
+                          <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
                           <p class="title"></p>
@@ -34,7 +34,7 @@
                       </div>
                       <div class="swiper-slide">
                         <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/240/200/300)">
-                          <img src="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLVUpEems2ZXpHYVk" class="entity-img" />
+                          <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
                           <p class="title"></p>
@@ -43,7 +43,7 @@
                       </div>
                       <div class="swiper-slide">
                         <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/241/200/300)">
-                          <img src="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLNXBIcEdOUFVIWmM" class="entity-img" />
+                          <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
                           <p class="title"></p>
@@ -115,10 +115,10 @@
                     <div class="col-12">
                         <div class="row align-items-center">
                             <div class="col-3">
-                                <img src="https://via.placeholder.com/150" class="rounded-circle img-fluid">
+                              <img src="{{$announcement->user->img ? Storage::url($announcement->user->img) : '/img/layout/avatar_male.jpeg'}}" class="rounded-circle img-fluid">
                             </div>
                             <div class="col-9">
-                                <h4>Nome Utente</h4>
+                                <h4>{{$announcement->user->name}}</h4>
                             </div>
                         </div>
                     </div>

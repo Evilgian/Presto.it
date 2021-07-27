@@ -9,12 +9,16 @@
             </ul>
         </div>
     @endif
-    <form method="POST" action="{{route('register')}}">
+    <form method="POST" action="{{route('register')}}" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Nome Utente</label>
-            <input type="text" name="name" class="form-control" id="exampleInputPassword1">
-          </div>
+            <label for="name" class="form-label">Nome Utente</label>
+            <input type="text" id="name" name="name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="profile-picture" class="form-label">Immagine del profilo</label>
+            <input type="file" name="img" class="form-control" id="profile-picture">
+        </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

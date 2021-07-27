@@ -14,8 +14,9 @@ class AnnouncementController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function __construct(){
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['index', 'show']);
     }
+
     public function index($category=NULL)
     {
         if($category){

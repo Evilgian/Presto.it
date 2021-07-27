@@ -12,6 +12,7 @@
   <body>
         <x-navbar/>
         {{$slot}}
+        <x-footer/>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/js/app.js"></script>
   </body>

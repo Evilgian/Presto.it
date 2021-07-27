@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AnnouncementController;
 
 /*
@@ -14,11 +15,10 @@ use App\Http\Controllers\AnnouncementController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('homepage');
+Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
 //! Rotte annunci
 Route::get('/annunci/nuovo', [AnnouncementController::class, 'create'])->name('announcement.create');
 Route::post('/annunci/salva', [AnnouncementController::class, 'store'])->name('announcement.store');
 Route::get('/annunci/{category?}', [AnnouncementController::class, 'index'])->name('announcements.index');
+Route::get('/annunci/show/{announcement}', [AnnouncementController::class, 'show'])->name('announcement.show');

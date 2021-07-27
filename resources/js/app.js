@@ -1,2 +1,3 @@
-require('bootstrap');
-require('./carousel');
+require("bootstrap");
+require("./carousel");
+require("./navbar");

@@ -165,14 +165,8 @@ return [
         /*
          * Package Service Providers...
          */
-<<<<<<< HEAD
-
         App\Providers\FortifyServiceProvider::class,
-
-=======
-        App\Providers\FortifyServiceProvider::class,
->>>>>>> 116a98bc8c356ecdd7c84828a9b54a34086e2070
-        /*
+        /* 
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,

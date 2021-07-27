@@ -10888,6 +10888,127 @@ body{
     padding:0;
     margin:0;
 }
+:root {
+    --main: #0075cc;
+    --secondary: #ff9e00;
+    --white: #eeeef3;
+}
+
+/* NAVBAR DEFAULT */
+#navbar {
+    background-color: var(--main);
+}
+
+.navbar-brand {
+    color: var(--white);
+    transition: all 0.1s;
+    transform: scale(1);
+}
+
+.navbar-brand:hover {
+    color: var(--secondary);
+    transform: scale(1.05);
+    font-weight: 500;
+}
+
+.btn-new {
+    color: var(--white);
+    border-color: var(--white);
+    transition: all 0.1s;
+    transform: scale(1);
+}
+
+.btn-new:hover {
+    color: var(--secondary);
+    border-color: var(--secondary);
+    transform: scale(1.05);
+    font-weight: 500;
+}
+
+.nav-link {
+    color: var(--white);
+    border-bottom: 2px solid transparent;
+    transition: all 0.1s;
+    transform: scale(1);
+}
+
+.nav-link:hover {
+    color: var(--white);
+    border-bottom: 2px solid var(--secondary);
+    transform: scale(1.05);
+    font-weight: 500;
+}
+
+.nav-link:focus {
+    color: var(--white);
+    /* border-bottom: 2px solid var(--secondary); */
+}
+
+.dropdown-menu {
+    background-color: var(--main);
+}
+
+.dropdown-item {
+    color: var(--white);
+}
+
+.dropdown-item:hover {
+    color: var(--secondary);
+    background-color: var(--main);
+}
+
+.navbar-toggler .fas {
+    color: var(--white);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/*------ NAVBAR LIGHT AFTER SCROLLING ---------*/
+
+.bg-light {
+    background-color: var(--white);
+}
+
+.bg-light .navbar-brand {
+    color: var(--main);
+}
+
+.bg-light .navbar-brand:hover {
+    color: var(--secondary);
+}
+
+.bg-light .btn-new {
+    color: var(--main);
+    border-color: var(--main);
+}
+
+.bg-light .btn-new:hover {
+    color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.bg-light .nav-link {
+    color: var(--main) !important;
+}
+
+.bg-light .dropdown-menu {
+    background-color: var(--white);
+}
+
+.bg-light .dropdown-item {
+    color: var(--main);
+}
+
+.bg-light .dropdown-item:hover {
+    color: var(--secondary);
+    background-color: var(--white);
+}
+
+.bg-light .navbar-toggler .fas {
+    color: var(--main);
+}
 
 [class^=swiper-button-] {
     transition: all 0.3s ease;

@@ -3115,6 +3115,8 @@ __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap
 
 __webpack_require__(/*! ./carousel */ "./resources/js/carousel.js");
 
+__webpack_require__(/*! ./navbar */ "./resources/js/navbar.js");
+
 /***/ }),
 
 /***/ "./resources/js/carousel.js":
@@ -3211,6 +3213,30 @@ var navSlider = new Swiper(navSliderSelector, navSliderOptions); // Matching sli
 
 mainSlider.controller.control = navSlider;
 navSlider.controller.control = mainSlider;
+
+/***/ }),
+
+/***/ "./resources/js/navbar.js":
+/*!********************************!*\
+  !*** ./resources/js/navbar.js ***!
+  \********************************/
+/***/ (() => {
+
+// NAVBAR SCROLL
+document.addEventListener("scroll", function () {
+  var navbar = document.querySelector("#navbar");
+
+  if (window.scrollY > 80) {
+    navbar.classList.add("bg-light");
+  } else {
+    navbar.classList.remove("bg-light");
+  }
+}); // NAVBAR SCROLL
+
+var toggler = document.querySelector(".navbar-toggler");
+toggler.addEventListener("click", function () {
+  toggler.classList.toggle("fa-rotate-90");
+});
 
 /***/ }),
 

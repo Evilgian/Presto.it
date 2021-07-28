@@ -10937,31 +10937,19 @@ body {
 .btn-outline-main {
     color: var(--main-color);
     border-color: var(--main-color);
-<<<<<<< HEAD
 }
-=======
-    }
->>>>>>> 1b461507a9363e32da324340e93eb3b2dcd21fff
 .btn-outline-main:hover {
     color: #fff;
     background-color: var(--main-color);
     border-color: var(--main-color);
 }
 
-<<<<<<< HEAD
 .card:hover {
     transform: scale(1.05);
     transition: 0.3s;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
-=======
-.card:hover{
-    transform: scale(1.05);
-    transition: 0.3s;
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-}
->>>>>>> 1b461507a9363e32da324340e93eb3b2dcd21fff
 :root {
     --main: #0075cc;
     --secondary: #ff9e00;

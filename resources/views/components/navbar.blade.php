@@ -35,12 +35,23 @@
                 @auth
                 <li class="nav-item dropdown">
                         
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{Auth::user()->name}}
+                        @if(Auth::user()->is_revisor && \App\Models\Announcement::toBeRevisionedCount())
+                            <span id="dropDownBadge" class="toBeRevisioned badge badge-pill badge-warning">{{\App\Models\Announcement::toBeRevisionedCount()}}</span>
+                        @endif
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="{{route('user.show')}}">Profilo</a></li>
                         <li><a class="dropdown-item" href="{{route('user.announcements')}}">I tuoi annunci</a></li>
+                        @if(Auth::user()->is_revisor)
+                        <li id="dashboard"><a class="dropdown-item" href="{{route('revisor.panel')}}">Dashboard</a>
+                            @if(\App\Models\Announcement::toBeRevisionedCount())
+                            <span class="toBeRevisioned badge badge-pill badge-warning">{{\App\Models\Announcement::toBeRevisionedCount()}}</span>
+                            @endif
+                        </li>
+                        
+                        @endif
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Logout<i class="fas fa-sign-out-alt ms-4"></i></a>
                             <form action="{{route('logout')}}" method="POST" id="logout-form">@csrf</form>

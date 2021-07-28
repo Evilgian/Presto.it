@@ -32,8 +32,8 @@ Route::get('/profilo/edit', [UserController::class, 'edit'])->name('user.edit');
 Route::put('/profilo/update/{user}', [UserController::class, 'update'])->name('user.update');
 Route::get('/riepilogo/annunci/{user?}', [AnnouncementController::class, 'indexByUser'])->name('user.announcements');
 
-//Rotte revisore
-
+//! Rotte revisore
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.panel');
 Route::post('/revisor/accepted/{id}', [RevisorController::class, 'accept'])->name('revisor.accepted');
 Route::post('/revisor/rejected/{id}', [RevisorController::class, 'reject'])->name('revisor.rejected');
+Route::post('/revisor/undo/{id}', [RevisorController::class, 'undo'])->name('revisor.undo');

@@ -3233,11 +3233,17 @@ document.addEventListener("scroll", function () {
   } else {
     navbar.classList.remove("bg-light");
   }
-}); // NAVBAR SCROLL
+}); // NAVBAR TOGGLER
 
 var toggler = document.querySelector(".navbar-toggler");
 toggler.addEventListener("click", function () {
   toggler.classList.toggle("fa-rotate-90");
+}); // BADGE TOGGLER
+
+var dropDown = document.querySelector('#userDropdown');
+var badge = document.querySelector('#dropDownBadge');
+dropDown.addEventListener('click', function () {
+  badge.classList.toggle('d-none');
 });
 
 /***/ }),

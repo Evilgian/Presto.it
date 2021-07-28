@@ -33,4 +33,8 @@ class RevisorController extends Controller
     public function reject($id){
         return $this->setAccepted($id, false);
     }
+
+    public function undo($id){
+        return $this->setAccepted($id, NULL);
+    }
 }

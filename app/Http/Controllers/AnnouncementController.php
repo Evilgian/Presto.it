@@ -30,9 +30,9 @@ class AnnouncementController extends Controller
     public function index($category=NULL)
     {
         if($category){
-            $announcements = Announcement::where('category_id', $category)->orderBy('id', 'DESC')->get();
+            $announcements = Announcement::where('is_accepted', true)->where('category_id', $category)->orderBy('id', 'DESC')->get();
         }else{
-            $announcements = Announcement::orderBy('id', 'DESC')->get();
+            $announcements = Announcement::where('is_accepted', true)->orderBy('id', 'DESC')->get();
         }
         return view('announcements.index', compact('announcements'));
     }

@@ -5,7 +5,7 @@
 					<h4>Informazioni aziendali</h4>
 					<ul class="list-unstyled quick-links">
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>Presto!</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Lavora con noi</a></li>
+						<li><a href="{{route('user.apply')}}"><i class="fa fa-angle-double-right"></i>Lavora con noi</a></li>
 						
 					</ul>
 				</div>

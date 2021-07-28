@@ -13,12 +13,13 @@ section .section-title {
 #footer {
     background: var(--main-color) !important;
 }
-#footer h5{
+#footer h4{
 	padding-left: 10px;
     border-left: 3px solid #eeeeee;
     padding-bottom: 6px;
     margin-bottom: 20px;
-    color:#ffffff;
+    /* color:#ffffff; */
+    color:var(--secondary);
 }
 #footer a {
     color: #ffffff;

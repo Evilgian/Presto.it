@@ -10905,6 +10905,10 @@ body {
     --accent-color: rgb(232, 232, 232);
 }
 
+.txt-secondary{
+    color:var(--secondary) !important;
+}
+
 .bg-main {
     background-color: var(--main-color);
 }
@@ -11045,7 +11049,7 @@ header{
 }
 
 .dropdown-menu {
-    background-color: var(--main);
+    background-color: var(--main-color);
 }
 
 .dropdown-item {
@@ -11054,7 +11058,7 @@ header{
 
 .dropdown-item:hover {
     color: var(--secondary);
-    background-color: var(--main);
+    background-color: var(--main-color);
 }
 
 .navbar-toggler .fas {
@@ -11227,12 +11231,13 @@ section .section-title {
 #footer {
     background: var(--main-color) !important;
 }
-#footer h5{
+#footer h4{
 	padding-left: 10px;
     border-left: 3px solid #eeeeee;
     padding-bottom: 6px;
     margin-bottom: 20px;
-    color:#ffffff;
+    /* color:#ffffff; */
+    color:var(--secondary);
 }
 #footer a {
     color: #ffffff;

@@ -37,7 +37,8 @@ Route::post('/candidati/invia', [PublicController::class, 'submit'])->name('appl
 
 
 //! Rotte revisore
-Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.panel');
+Route::get('/revisor/home/{announcement}', [RevisorController::class, 'index'])->name('revisor.panel');
+Route::get('/revisor/dashboard', [RevisorController::class, 'dashboard'])->name('revisor.dashboard');
 Route::post('/revisor/accepted/{id}', [RevisorController::class, 'accept'])->name('revisor.accepted');
 Route::post('/revisor/rejected/{id}', [RevisorController::class, 'reject'])->name('revisor.rejected');
 Route::post('/revisor/undo/{id}', [RevisorController::class, 'undo'])->name('revisor.undo');

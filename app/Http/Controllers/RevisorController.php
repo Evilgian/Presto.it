@@ -14,10 +14,15 @@ class RevisorController extends Controller
         $this->middleware('auth.revisor');
     } 
 
-    public function index() {
+    public function dashboard(){
+        $pending = Announcement::where('is_accepted', NULL)->get();
+        $rejected = Announcement::where('is_accepted', FALSE)->get();
 
-        $announcement= Announcement::where('is_accepted', null)->first();
-        
+        return view('revisors.dashboard', compact('pending', 'rejected'));
+    }
+
+    public function index(Announcement $announcement) {
+        // $announcement= Announcement::where('is_accepted', null)->first();
         return view('revisors.index', compact('announcement'));
     }
 
@@ -26,7 +31,7 @@ class RevisorController extends Controller
         $announcement->is_accepted = $value;
         $announcement->save();
         
-        return redirect(route('revisor.panel'));
+        return redirect(route('revisor.dashboard'));
     }
 
     public function accept($id){

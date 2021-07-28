@@ -15,7 +15,13 @@
   
   .swiper-container {
     width: 80%;
-    height: 100vh;
+    height: 100%;
+    float: right;
+    transition: opacity 0.6s ease, transform 0.3s ease;
+  }
+  .swiper-container.show {
+    width: 80%;
+    height: 50vh;
     float: right;
     transition: opacity 0.6s ease, transform 0.3s ease;
   }

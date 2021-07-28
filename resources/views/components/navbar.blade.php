@@ -45,7 +45,7 @@
                         <li><a class="dropdown-item" href="{{route('user.show')}}">Profilo</a></li>
                         <li><a class="dropdown-item" href="{{route('user.announcements')}}">I tuoi annunci</a></li>
                         @if(Auth::user()->is_revisor)
-                        <li id="dashboard"><a class="dropdown-item" href="{{route('revisor.panel')}}">Dashboard</a>
+                        <li id="dashboard"><a class="dropdown-item" href="{{route('revisor.dashboard')}}">Dashboard</a>
                             @if(\App\Models\Announcement::toBeRevisionedCount())
                             <span class="toBeRevisioned badge badge-pill badge-warning">{{\App\Models\Announcement::toBeRevisionedCount()}}</span>
                             @endif

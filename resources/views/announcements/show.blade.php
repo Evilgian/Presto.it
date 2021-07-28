@@ -18,11 +18,11 @@
         <div class="row">
             <!-- SLIDESHOW -->
             <div class="col-12 col-md-7 carousel text-center">
-                <div class="swiper-container main-slider loading">
+                <div class="swiper-container show main-slider loading">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
-                        <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/237/200/300)">
-                          <img src="https://picsum.photos/id/237/200/300" class="entity-img" />
+                        <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/237/500/500)">
+                          <img src="https://picsum.photos/id/237/500/500" class="entity-img" />
                         </figure>
                         <div class="content">
                           <p class="title"></p>
@@ -30,7 +30,7 @@
                         </div>
                       </div>
                       <div class="swiper-slide">
-                        <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/238/200/300)">
+                        <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/238/500/500)">
                           <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
@@ -39,7 +39,7 @@
                         </div>
                       </div>
                       <div class="swiper-slide">
-                        <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/239/200/300)">
+                        <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/239/500/500)">
                           <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
@@ -48,7 +48,7 @@
                         </div>
                       </div>
                       <div class="swiper-slide">
-                        <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/240/200/300)">
+                        <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/240/500/500)">
                           <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
@@ -57,7 +57,7 @@
                         </div>
                       </div>
                       <div class="swiper-slide">
-                        <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/241/200/300)">
+                        <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/241/500/500)">
                           <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
@@ -72,7 +72,7 @@
                   </div>
                   
                   <!-- Thumbnail navigation -->
-                  <div class="swiper-container nav-slider loading">
+                  <div class="swiper-container show nav-slider loading">
                     <div class="swiper-wrapper" role="navigation">
                       <div class="swiper-slide">
                         <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/237/200/300)">

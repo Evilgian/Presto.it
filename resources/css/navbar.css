@@ -1,12 +1,8 @@
-:root {
-    --main: #0075cc;
-    --secondary: #ff9e00;
-    --white: #eeeef3;
-}
+
 
 /* NAVBAR DEFAULT */
 #navbar {
-    background-color: var(--main);
+    background-color: var(--main-color);
 }
 
 .navbar-brand {
@@ -82,7 +78,7 @@
 }
 
 .bg-light .navbar-brand {
-    color: var(--main);
+    color: var(--main-color);
 }
 
 .bg-light .navbar-brand:hover {
@@ -90,8 +86,8 @@
 }
 
 .bg-light .btn-new {
-    color: var(--main);
-    border-color: var(--main);
+    color: var(--main-color);
+    border-color: var(--main-color);
 }
 
 .bg-light .btn-new:hover {
@@ -100,7 +96,7 @@
 }
 
 .bg-light .nav-link {
-    color: var(--main) !important;
+    color: var(--main-color) !important;
 }
 
 .bg-light .dropdown-menu {
@@ -108,7 +104,7 @@
 }
 
 .bg-light .dropdown-item {
-    color: var(--main);
+    color: var(--main-color);
 }
 
 .bg-light .dropdown-item:hover {
@@ -117,5 +113,5 @@
 }
 
 .bg-light .navbar-toggler .fas {
-    color: var(--main);
+    color: var(--main-color);
 }

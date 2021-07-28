@@ -10959,6 +10959,12 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
+<<<<<<< HEAD
+:root {
+    --main: #0075cc;
+    --secondary: #ff9e00;
+    --white: #eeeef3;
+=======
 
 /*! HEADER */
 header{
@@ -10978,6 +10984,7 @@ header{
     color:var(--main-color);
     font-weight:900;
     font-size:5em;
+>>>>>>> 47fa3d9f5eb3259261fde7e60ddcbc1c83ab4844
 }
 
 #header-txt>h5{

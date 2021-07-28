@@ -11,14 +11,7 @@
       </ul>
     </div>
     @endif
-    {{-- CONFIRM REVIEW POSTED --}}
-    @if(session('message'))
-    <div class="col-12 col-md-6 offset-md-3 mt-5">
-      <div class="alert alert-success">
-        {{session('message')}}
-      </div>
-    </div>
-    @endif
+  
     <form method="POST" action="{{route('announcement.store')}}">
       @csrf
       <div class="mb-3">

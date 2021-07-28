@@ -1,5 +1,20 @@
 <x-layout>
     <div class="container">
+      @if($announcement->is_accepted === NULL)
+        <div class="alert alert-warning">Il tuo annuncio è in corso di moderazione </div>
+      @endif
+      @if($announcement->is_accepted === 0)
+        <div class="alert alert-danger d-flex flex-wrap justify-content-between">
+          <div class="">Questo annuncio è stato rifiutato perché non conforme ai termini della community</div>
+          @if (Auth::user()->is_revisor)
+            <form action="{{route('revisor.undo', $announcement->id)}}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-warning">Undo</button>
+            </form>
+          @endif
+                
+        </div>
+      @endif
         <div class="row">
             <!-- SLIDESHOW -->
             <div class="col-12 col-md-7 carousel text-center">

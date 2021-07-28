@@ -3117,6 +3117,8 @@ __webpack_require__(/*! ./carousel */ "./resources/js/carousel.js");
 
 __webpack_require__(/*! ./navbar */ "./resources/js/navbar.js");
 
+__webpack_require__(/*! ./script.js */ "./resources/js/script.js");
+
 /***/ }),
 
 /***/ "./resources/js/carousel.js":
@@ -3231,11 +3233,37 @@ document.addEventListener("scroll", function () {
   } else {
     navbar.classList.remove("bg-light");
   }
-}); // NAVBAR SCROLL
+}); // NAVBAR TOGGLER
 
 var toggler = document.querySelector(".navbar-toggler");
 toggler.addEventListener("click", function () {
   toggler.classList.toggle("fa-rotate-90");
+}); // BADGE TOGGLER
+
+var dropDown = document.querySelector('#userDropdown');
+var badge = document.querySelector('#dropDownBadge');
+dropDown.addEventListener('click', function () {
+  badge.classList.toggle('d-none');
+});
+
+/***/ }),
+
+/***/ "./resources/js/script.js":
+/*!********************************!*\
+  !*** ./resources/js/script.js ***!
+  \********************************/
+/***/ (() => {
+
+var loader = document.querySelector('#img');
+loader.addEventListener('change', function (event) {
+  var reader = new FileReader();
+
+  reader.onload = function () {
+    var canvas = document.getElementById('canvas');
+    canvas.src = reader.result;
+  };
+
+  reader.readAsDataURL(event.target.files[0]);
 });
 
 /***/ }),

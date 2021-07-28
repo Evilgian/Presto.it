@@ -1,6 +1,6 @@
 <x-layout>
     @if(session('message'))
-        <div class="alert alert-success">
+        <div class="alert alert-success my-0">
             {{session('message')}}
         </div>
     @endif
@@ -13,7 +13,7 @@
             </div>
         </header>
     </div>
-    <div id="annunci" class="container">
+    <div id="annunci" class="container pt-5 mt-2">
         <div class="row">
             @foreach ($announcements as $announcement)
                 <x-card :announcement="$announcement"/>

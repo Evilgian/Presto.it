@@ -18,6 +18,10 @@ body {
     --accent-color: rgb(232, 232, 232);
 }
 
+.txt-secondary{
+    color:var(--secondary) !important;
+}
+
 .bg-main {
     background-color: var(--main-color);
 }

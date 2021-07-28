@@ -69,7 +69,7 @@
                       </div>
                       <div class="swiper-slide">
                         <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/238/200/300)">
-                          <img src="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLWTdaX3J5b1VueDg" class="entity-img" />
+                          <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
                           <p class="title"></p>
@@ -77,7 +77,7 @@
                       </div>
                       <div class="swiper-slide">
                         <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/239/200/300)">
-                          <img src="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLRml1b3B6eXVqQ2s" class="entity-img" />
+                          <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
                           <p class="title"></p>
@@ -85,7 +85,7 @@
                       </div>
                       <div class="swiper-slide">
                         <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/240/200/300)">
-                          <img src="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLVUpEems2ZXpHYVk" class="entity-img" />
+                          <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
                           <p class="title"></p>
@@ -93,7 +93,7 @@
                       </div>
                       <div class="swiper-slide">
                         <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/241/200/300)">
-                          <img src="https://drive.google.com/uc?export=view&id=0B_koKn2rKOkLNXBIcEdOUFVIWmM" class="entity-img" />
+                          <img src="" class="entity-img" />
                         </figure>
                         <div class="content">
                           <p class="title"></p>
@@ -128,7 +128,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 ">
+            <div class="col-12 lead mt-3 ">
                 <h3>Descrizione</h3>
                 {{$announcement->description}}
             </div>

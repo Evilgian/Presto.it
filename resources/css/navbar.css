@@ -51,7 +51,7 @@
 }
 
 .dropdown-menu {
-    background-color: var(--main);
+    background-color: var(--main-color);
 }
 
 .dropdown-item {
@@ -60,7 +60,7 @@
 
 .dropdown-item:hover {
     color: var(--secondary);
-    background-color: var(--main);
+    background-color: var(--main-color);
 }
 
 .navbar-toggler .fas {

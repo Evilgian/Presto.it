@@ -35,3 +35,5 @@ Route::get('/riepilogo/annunci/{user?}', [AnnouncementController::class, 'indexB
 //Rotte revisore
 
 Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.panel');
+Route::post('/revisor/accepted/{id}', [RevisorController::class, 'accept'])->name('revisor.accepted');
+Route::post('/revisor/rejected/{id}', [RevisorController::class, 'reject'])->name('revisor.rejected');

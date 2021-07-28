@@ -34,6 +34,6 @@ class ApplicationReceived extends Mailable
     public function build()
     {
         // dd($this->contact);
-        return $this->from('info@presto.com')->view('mails.application');
+        return $this->from('applications@presto.it')->view('mails.applicationReceived');
     }
 }

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Mail\ApprovedAnnouncement;
+use App\Mail\RejectedAnnouncement;
+use Illuminate\Support\Facades\Mail;
 
 class RevisorController extends Controller
 {
@@ -27,10 +30,16 @@ class RevisorController extends Controller
     }
 
     public function accept($id){
+        $announcement = Announcement::find($id);
+        $mail = $announcement->user->email;
+        Mail::to($mail)->send(new ApprovedAnnouncement($announcement));
         return $this->setAccepted($id, true);
     }
 
     public function reject($id){
+        $announcement = Announcement::find($id);
+        $mail = $announcement->user->email;
+        Mail::to($mail)->send(new RejectedAnnouncement($announcement));
         return $this->setAccepted($id, false);
     }
 

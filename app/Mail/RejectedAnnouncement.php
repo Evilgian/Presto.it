@@ -7,21 +7,17 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ApplicationSent extends Mailable
+class RejectedAnnouncement extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
+    public $announcement;
 
-     public $contact;
-    public function __construct($contact)
+    public function __construct($announcement)
     {
-        $this->contact=$contact;
+        $this->announcement = $announcement;
     }
+
 
     /**
      * Build the message.
@@ -30,6 +26,7 @@ class ApplicationSent extends Mailable
      */
     public function build()
     {
-        return $this->from('applications@presto.it')->view('mails.applicationSent');
+        return $this->from('moderation@presto.it')
+                    ->view('mails.rejected');
     }
 }

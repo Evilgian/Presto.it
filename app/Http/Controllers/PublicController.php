@@ -24,8 +24,8 @@ class PublicController extends Controller
         $mail = $request->input('email');
        
         
-        Mail::to($mail)->send(new ApplicationReceived($request->input()));
-        Mail::to('davide7h@gmail.com')->send(new ApplicationSent($request->input()));
+        Mail::to('davide7h@gmail.com')->send(new ApplicationReceived($request->input()));
+        Mail::to($mail)->send(new ApplicationSent($request->input()));
         return redirect (route('homepage'))->with('message', 'La tua mail è stata inviata correttamente');
 
     }

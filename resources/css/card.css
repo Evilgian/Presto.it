@@ -59,4 +59,5 @@ color:var(--main-color) !important;
 
 .rounded{
     border-radius:50% !important;
+    border:2px solid var(--main-color);
 }

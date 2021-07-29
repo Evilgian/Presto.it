@@ -100,7 +100,7 @@
     
     
     <script>
-        var swiper = new Swiper(".mySwiperPending", {
+        var swiperPending = new Swiper(".mySwiperPending", {
             slidesPerView:1,
             spaceBetween:10,
             breakpoints: {
@@ -130,9 +130,9 @@
             },    
         });
 
-        var swiper = new Swiper(".mySwiperRejected", {
+        var swiperRejected = new Swiper(".mySwiperRejected", {
             slidesPerView:1,
-            spaceBetween:20,
+            spaceBetween:10,
             breakpoints: {
                 // when window width is >= 320px
                 320: {

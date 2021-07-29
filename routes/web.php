@@ -24,6 +24,8 @@ Route::get('/annunci/nuovo', [AnnouncementController::class, 'create'])->name('a
 Route::post('/annunci/salva', [AnnouncementController::class, 'store'])->name('announcement.store');
 Route::get('/annunci/{category?}', [AnnouncementController::class, 'index'])->name('announcements.index');
 Route::get('/annunci/show/{announcement}', [AnnouncementController::class, 'show'])->name('announcement.show');
+Route::get('/annunci/modifica/{announcement}', [AnnouncementController::class, 'edit'])->name('announcement.edit');
+Route::put('/annunci/aggiorna/{announcement}', [AnnouncementController::class, 'update'])->name('announcement.update');
 
 
 //! Rotte utenti

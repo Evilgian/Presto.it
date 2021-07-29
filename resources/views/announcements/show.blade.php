@@ -147,6 +147,7 @@
                 <h3>Descrizione</h3>
                 {{$announcement->description}}
             </div>
+            <a href="{{route('announcement.edit', $announcement)}}"><button class="btn btn-outline-main">Modifica</button></a>
         </div>
     </div>
 </x-layout>

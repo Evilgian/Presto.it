@@ -85,7 +85,7 @@ class AnnouncementController extends Controller
      */
     public function edit(Announcement $announcement)
     {
-        //
+        return view('announcements.edit', compact('announcement'));
     }
 
     /**
@@ -97,7 +97,13 @@ class AnnouncementController extends Controller
      */
     public function update(Request $request, Announcement $announcement)
     {
-        //
+        $announcement->title = $request->input('title');
+        $announcement->category_id = $request->input('category');
+        $announcement->price = $request->input('price');
+        $announcement->description = $request->input('description');
+        $announcement->save();
+
+        return redirect(route('announcement.show', compact('announcement')))->with('updated', 'Il tuo annuncio è stato modificato');
     }
 
     /**

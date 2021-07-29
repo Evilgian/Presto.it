@@ -20,5 +20,9 @@ toggler.addEventListener("click", function () {
 let dropDown = document.querySelector('#userDropdown');
 let badge = document.querySelector('#dropDownBadge');
 dropDown.addEventListener('click', function(){
-    badge.classList.toggle('d-none');
+    if (dropDown.classList.contains('show')){
+        badge.classList.remove('d-none');
+    }else{
+        badge.classList.add('d-none');
+    }
 })

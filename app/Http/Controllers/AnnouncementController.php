@@ -85,7 +85,11 @@ class AnnouncementController extends Controller
      */
     public function edit(Announcement $announcement)
     {
-        return view('announcements.edit', compact('announcement'));
+        if(($announcement->user->id == Auth::id()) || Auth::user()->is_revisor){
+            return view('announcements.edit', compact('announcement'));
+        } else {
+            return redirect(route('homepage'));
+        }
     }
 
     /**
@@ -114,6 +118,12 @@ class AnnouncementController extends Controller
      */
     public function destroy(Announcement $announcement)
     {
-        dd($announcement);
+        if(($announcement->user->id == Auth::id()) || Auth::user()->is_revisor){
+            $announcement->delete();
+            return redirect(route('announcement.index'))->with('deleted', 'L\'annuncio è stato eliminato');
+        } else {
+            return redirect(route('homepage'));
+        }
+        
     }
 }

@@ -1,5 +1,5 @@
 <x-layout>
-  <div class="container">
+  <div class="container pt-5">
     @if($announcement->is_accepted === NULL)
     <div class="alert alert-warning">Il tuo annuncio è in corso di moderazione </div>
     @endif
@@ -15,9 +15,9 @@
       
     </div>
     @endif
-    <div class="row">
+    <div class="row mt-5">
       <!-- SLIDESHOW -->
-      <div class="col-12 col-md-7 carousel text-center">
+      <div class="col-12 col-md-7 carousel text-center ">
         <div class="swiper-container show main-slider loading">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -122,7 +122,7 @@
       <div class="col-12 col-md-5">
         <div class="row h-100 flex-column justify-content-between">
           <div class="col-12">
-            <a href="{{route('announcements.index', $announcement->category->id)}}">{{$announcement->category->name}}</a>
+            <a href="{{route('announcements.index', $announcement->category->id)}}" class="txt-secondary">{{$announcement->category->name}}</a>
             <div>{{$announcement->created_at->format('d/m/Y')}} alle {{$announcement->created_at->format('H:i')}}</div>
             <h2>{{$announcement->title}}</h2>
             <h4>€ {{number_format($announcement->price, 2, ',', '.');}}</h4>

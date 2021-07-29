@@ -1,39 +1,28 @@
 <x-layout>
-    <div class="container">
+    <div id="apply-txt" class="container mt-3">
+        <h1 class="txt-secondary text-center mb-3">Inviaci la tua candidatura</h1>
+        <h4 class="txt-secondary text-center">Compila il form per diventare revisore!</h4>
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 mt-4">
                 <form method="POST" action="{{route('application.submit')}}">
                  @csrf
                 <!-- Name input -->
-                <div class="form-outline mb-4 mt-5">
-                    <label class="form-label" for="form4Example1">Name</label>
-                    <input type="text" name="name" id="form4Example1" class="form-control"/>
+                <div class="form-floating mb-3">
+                    <input type="text" name="name" id="floatingInput" class="form-control" placeholder="Nome"/>
+                    <label class="form-label" for="floatingInput">Nome</label>
                 </div>
                 <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form4Example2">Email address</label>
-                    <input type="email" name="email" id="form4Example2" class="form-control" />
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Indirizzo email" />
+                    <label for="floatingInput">Indirizzo email</label>
                 </div>
                 <!-- Message input -->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form4Example3">Message</label>
-                    <textarea class="form-control" name="message" id="form4Example3" rows="4"></textarea>
-                </div>
-                <!-- Checkbox -->
-                <div class="form-check d-flex justify-content-center mb-4">
-                    <input
-                    class="form-check-input me-2"
-                    type="checkbox"
-                    value=""
-                    id="form4Example4"
-                    checked
-                    />
-                    <label class="form-check-label" for="form4Example4">
-                    Send me a copy of this message
-                    </label>
+                <div class="form-floating mb-4">
+                    <textarea class="form-control" name="message" id="floatingTextarea" rows="4" placeholder="Scrivi qui il tuo messaggio:"></textarea>
+                    <label class="form-label" for="floatingTextarea">Scrivi qui il tuo messaggio:</label>
                 </div>
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-outline-main w-100 btn-block mb-4">Send</button>
+                <button type="submit" class="btn btn-outline-main fw-bold w-100 btn-block mb-4">Invia candidatura</button>
                 </form>
             </div>
         </div>

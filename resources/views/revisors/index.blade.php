@@ -3,7 +3,7 @@
   <div class="container pt-3 min-vh-100">
     <div class="row">
       <div class="col-12">
-        <h2 class="mt-5 fw-bold text-main text-center">Annunci da approvare</h2>
+        <h2 class="mt-5 fw-bold text-main text-center">Annuncio da approvare</h2>
       </div>
         @if ($announcement)
         

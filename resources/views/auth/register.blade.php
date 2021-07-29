@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid mt-3" id="sign_up_container">
+    <div class="container-fluid pt-3" id="sign_up_container">
       <div class="row">
         <div class="col-12 col-md-4 offset-md-4 col_form mb-5">
 

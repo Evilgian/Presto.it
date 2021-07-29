@@ -1,5 +1,5 @@
 <x-layout>
-  <div class="container pt-5">
+  <div class="container pt-3">
     @if($announcement->is_accepted === NULL)
     <div class="alert alert-warning">Il tuo annuncio è in corso di moderazione </div>
     @endif

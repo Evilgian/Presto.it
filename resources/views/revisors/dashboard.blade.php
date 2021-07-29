@@ -46,13 +46,14 @@
           }
 
 
-        /* #dashboard-view{
-            background: linear-gradient(90deg, #4ce1d5b4, transparent)
-        } */
+        #dashboard-view{
+            background-image: url('/img/sign_up_background.jpg');
+            background-size: cover;
+        }
     </style>
 
     
-    {{-- <div class="container-fluid" id="dashboard-view"> --}}
+    <div class="container-fluid" id="dashboard-view">
         <div class="container pt-3">
             <div class="row">
                 <div class="col-12">
@@ -118,7 +119,7 @@
                 </div>
             </div>
         </div>
-    {{-- </div> --}}
+    </div>
     
     
     <script>

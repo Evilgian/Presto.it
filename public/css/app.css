@@ -10896,7 +10896,7 @@ body {
 }
 
 :root {
-    --main-color:#004b57;
+    --main-color: #004b57;
     --main: #0075cc;
     --secondary: #ff9e00;
     --white: #eeeef3;
@@ -10905,8 +10905,8 @@ body {
     --accent-color: rgb(232, 232, 232);
 }
 
-.txt-secondary{
-    color:var(--secondary) !important;
+.txt-secondary {
+    color: var(--secondary) !important;
 }
 
 .bg-main {
@@ -10953,49 +10953,61 @@ body {
     border-color: var(--main-color);
 }
 
+.btn-main {
+    color: #fff;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+.btn-main:hover {
+    color: var(--main-color);
+    border-color: var(--main-color);
+    background-color: #fff;
+}
+
 .card:hover {
     /* transform: scale(1.05); */
     transition: 0.3s;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
-
 /*! HEADER */
-header{
-    position:relative;
-    height:calc(100vh - 58px);
-    background-image:linear-gradient(90deg, #4ce1d5b4, transparent), url('/img/layout/header_bg.jpeg');
-    background-size:cover;
-    background-position:center;
-    margin-bottom:30px;
+header {
+    position: relative;
+    height: calc(100vh - 58px);
+    background-image: linear-gradient(90deg, #4ce1d5b4, transparent),
+        url("/img/layout/header_bg.jpeg");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 30px;
 }
 
-#header-txt{
-    padding-left:10%;
+#header-txt {
+    padding-left: 10%;
 }
 
-#header-txt>h1{
-    color:var(--main-color);
-    font-weight:900;
-    font-size:5em;
+#header-txt > h1 {
+    color: var(--main-color);
+    font-weight: 900;
+    font-size: 5em;
 }
 
-#header-txt>h5{
-    color:var(--main-color);
-    font-size:1.5em;
+#header-txt > h5 {
+    color: var(--main-color);
+    font-size: 1.5em;
 }
 
-.chevron{
-    position:absolute;
-    bottom:10px;
-    left:47%;
-    font-size:6em;
-    color:var(--main-color);
-    transition:.2s; 
+.chevron {
+    position: absolute;
+    bottom: 10px;
+    left: 47%;
+    font-size: 6em;
+    color: var(--main-color);
+    transition: 0.2s;
 }
-.chevron:hover{
-    color:var(--secondary);
+.chevron:hover {
+    color: var(--secondary);
 }
+
 
 
 /* NAVBAR DEFAULT */

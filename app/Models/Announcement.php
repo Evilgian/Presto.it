@@ -54,4 +54,19 @@ class Announcement extends Model
                return $array;
         }
 
+
+        public function preview($sample){
+            $sample= strip_tags($sample);
+            $sample=substr($sample, 0, 50);
+            $sample=$sample."...";
+    
+            return $sample;
+        }
+    
+        public function getPreview(){
+            return $this->preview($this->description);
+        }
+    
+    
+
 }

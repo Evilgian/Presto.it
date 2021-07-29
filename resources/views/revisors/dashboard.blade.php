@@ -1,10 +1,15 @@
 <x-layout>
     <style><!-- Slider main container -->
+
+   
         .swiper-container {
             width: 80%;
             height: 100px !important;
         }
         
+        .trash-wrapper>*{
+            padding-right: 40px
+        }
         .swiper-slide {
             text-align: center;
             font-size: 18px;
@@ -31,72 +36,89 @@
             height: 100%; */
             object-fit: cover;
         }
+
+        .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+           background-color: #ff9e00; 
+        }
+
+        :root {
+         --swiper-theme-color: #ff9e00;
+          }
+
+
+        /* #dashboard-view{
+            background: linear-gradient(90deg, #4ce1d5b4, transparent)
+        } */
     </style>
-    <div class="container pt-3">
-        <h3 class="mt-5">Pending...</h3>
-        <div class="row mb-5" style="height:500px">
-            <!-- Slider main container -->
-            <div class="swiper-container mySwiperPending">
-                <div class="swiper-wrapper">
-                    @foreach ($pending as $announcement)
-                    <div class="swiper-slide border">
-                        <div class="card h-100 w-100">
-                            <img src="https://via.placeholder.com/250" class="h-50 img-fluid" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$announcement->title}}</h5>
-                                <p class="card-text">{{$announcement->description}}</p>
-                                <a href="{{route('revisor.panel', $announcement)}}" class="btn btn-primary">Modera</a>
-                            </div>
-                        </div>
-                    </div>  
-                    @endforeach
+
+    
+    {{-- <div class="container-fluid" id="dashboard-view"> --}}
+        <div class="container pt-3">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mt-5 fw-bold text-main text-center">La tua Dashboard</h2>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-            </div> 
-        </div>
-
-
-        <h3>Cestino</h3>
-        <div class="row" style="height:300px">
-            <!-- Slider main container -->
-            <div class="swiper-container mySwiperRejected">
-                <div class="swiper-wrapper">
-                    @foreach ($rejected as $announcement)
-                    <div class="swiper-slide border m-0">
-                        <div class="swiper-slide border">
-                            <div class="card h-100 w-100">
-                                <img src="https://via.placeholder.com/250" class="h-50 img-fluid" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{$announcement->title}}</h5>
-                                    <a href="{{route('announcement.show', $announcement)}}" class="btn btn-primary">Vedi</a>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <h3 class="mt-5  txt-secondary text-center">Pending...</h3>
+                </div>
+            </div>
+            <div class="row mb-5 " style="height:500px">    
+                <!-- Slider main container -->
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="swiper-container mySwiperPending">
+                        <div class="swiper-wrapper">
+                            @foreach ($pending as $announcement)
+                            <div class="swiper-slide border">
+                                <div class="card h-100 w-100">
+                                    <img src="https://via.placeholder.com/250" class="h-50 img-fluid" alt="...">
+                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
+                                        <h5 class="card-title">{{$announcement->title}}</h5>
+                                        <p class="card-text">{{$announcement->getPreview()}}</p>
+                                        <a href="{{route('revisor.panel', $announcement)}}"
+                                        class="btn btn-outline-main w-50">Modera</a>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <h3 class="mt-5  txt-secondary text-center">Cestino</h3>
+                </div>
+            </div>
+            <div class="row" style="height:300px">
+                <!-- Slider main container -->
+                <div class="swiper-container mySwiperRejected">
+                    <div class="swiper-wrapper trash-wrapper">
+                        @foreach ($rejected as $announcement)
+                        <div class="swiper-slide m-0 ">
+                            <div class="swiper-slide">
+                                <div class="card h-100 w-100">
+                                    <img src="https://via.placeholder.com/250" class="h-50 img-fluid" alt="...">
+                                    <div class="card-body d-flex flex-column justify-content-around align-items-center">
+                                        <h5 class="card-title">{{$announcement->title}}</h5>
+                                        <a href="{{route('announcement.show', $announcement)}}" class="btn btn-outline-main w-50">Vedi</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>  
-                    @endforeach
+                        @endforeach
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-            </div> 
+            </div>
         </div>
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-    </div>
+    {{-- </div> --}}
     
     
     <script>

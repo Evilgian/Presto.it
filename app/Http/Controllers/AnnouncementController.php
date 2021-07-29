@@ -85,7 +85,7 @@ class AnnouncementController extends Controller
      */
     public function edit(Announcement $announcement)
     {
-        if(($announcement->user->id == Auth::id()) || Auth::user()->is_revisor){
+        if(($announcement->user->id == Auth::id())){
             return view('announcements.edit', compact('announcement'));
         } else {
             return redirect(route('homepage'));

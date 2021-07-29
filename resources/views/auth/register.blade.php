@@ -1,7 +1,7 @@
 <x-layout>
     <div class="container-fluid mt-3" id="sign_up_container">
       <div class="row">
-        <div class="col-12 col-md-4 offset-4 col_form mb-5">
+        <div class="col-12 col-md-4 offset-md-4 col_form mb-5">
 
 
           <h1 class="text-main">SIGN UP</h1>
@@ -38,7 +38,8 @@
                 <label for="exampleInputPassword1" class="form-label text-main">Conferma Password</label>
                 <input type="password" class="form-control sign_up_input" name="password_confirmation" id="exampleInputPassword1">
               </div>
-              <button type="submit" class="btn btn-outline-main  btn_sign_up">Submit</button>
+              <div class="text-center"><button type="submit" class="btn btn-outline-main  btn_sign_up">Submit</button></div>
+              
             </form>
         </div>
         </div>

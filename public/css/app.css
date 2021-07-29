@@ -11421,8 +11421,8 @@ section .section-title {
   }
 
   .btn_sign_up{
-    position:absolute;
-    left:25%;
+    /* position:absolute;
+    left:25%; */
     padding: 0.375rem 3.75rem !important;
     border: 2px solid var(--main-color) !important;
     border-radius:10px !important;
@@ -11439,6 +11439,8 @@ section .section-title {
   
 
   }
+
+  
 
 
 
@@ -11469,7 +11471,11 @@ section .section-title {
 
   }
 
-  
+  #login_container a{
+    color:var(--secondary) !important;
+  }
+
+
 
 
 

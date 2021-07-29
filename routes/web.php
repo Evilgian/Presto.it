@@ -26,6 +26,7 @@ Route::get('/annunci/{category?}', [AnnouncementController::class, 'index'])->na
 Route::get('/annunci/show/{announcement}', [AnnouncementController::class, 'show'])->name('announcement.show');
 Route::get('/annunci/modifica/{announcement}', [AnnouncementController::class, 'edit'])->name('announcement.edit');
 Route::put('/annunci/aggiorna/{announcement}', [AnnouncementController::class, 'update'])->name('announcement.update');
+Route::delete('/annunci/aggiorna/{announcement}', [AnnouncementController::class, 'destroy'])->name('announcement.destroy');
 
 
 //! Rotte utenti

@@ -41,8 +41,12 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'queue' => env('SCOUT_QUEUE', true
 ),
+=======
+    'queue' => env('SCOUT_QUEUE', true),
+>>>>>>> 0e7adb6eacb76245ff3d3b1f852738bb3e16d6c8
 
     /*
     |--------------------------------------------------------------------------

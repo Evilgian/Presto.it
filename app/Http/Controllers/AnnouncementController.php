@@ -114,6 +114,6 @@ class AnnouncementController extends Controller
      */
     public function destroy(Announcement $announcement)
     {
-        //
+        dd($announcement);
     }
 }

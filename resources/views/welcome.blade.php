@@ -8,11 +8,18 @@
         <header class="row align-items-center">
             <div id="header-txt">
                 <h1>PRESTO!</h1>
-                <h5>Ché oggi è già domani!</h5>
-                        <form action="{{route('search')}}" method="GET" class="mt-5">
-                            <input type="text" name="q" class="form-control-lg form-control w-75" placeholder="Guarda che bello!">
+                <h5 class="font-weight-bold">Ché oggi è già domani!</h5>
+
+                        
+                       <form action="{{route('search')}}" method="GET" class="mt-5">
+                            <input type="text" name="q" class="form-control-lg form-control w-75 search-bar" placeholder="Guarda che bello!">
                             <button class="btn btn-outline-main" type="submit">Cerca</button>
                         </form>
+
+                        
+                        
+
+
                 <a class="chevron" href="#annunci"><i class="fas fa-chevron-circle-down"></i></a>
             </div>
         </header>

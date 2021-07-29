@@ -143,12 +143,16 @@
         <div class="card-buttons d-flex justify-content-around">
           <form action="{{route('revisor.accepted', $announcement->id)}} " method="POST">
             @csrf
-            <button  class="btn btn-outline-main" type='submit'>Accetta</button>
+            <button  class="btn btn-outline-main" type='submit'>
+              <i class="fas fa-check me-1"></i>Accetta</button>
           </form>
           
           <form action="{{route('revisor.rejected', $announcement->id)}} " method="POST">
             @csrf
-            <button type='submit' class="btn btn-main">Rifiuta</button>
+            <button type="submit" class="btn btn-outline-danger">
+              <i class="fas fa-trash me-2"></i>Rifiuta
+            </button>
+            {{-- <button type='submit' class="btn btn-main">Rifiuta</button> --}}
           </form>
         </div>
        </div>

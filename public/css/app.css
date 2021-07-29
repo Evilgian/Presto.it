@@ -11007,17 +11007,20 @@ header {
 .chevron:hover {
     color: var(--secondary);
 }
-
-#apply-txt>h1{
-    color:var(--secondary);
-    font-weight:800;
-    font-size:3em;
+.chevron:hover {
+    color: var(--secondary);
 }
 
-#apply-txt>h4{
-    color:var(--secondary);
+#apply-txt > h1 {
+    color: var(--secondary);
+    font-weight: 800;
+    font-size: 3em;
+}
+
+#apply-txt > h4 {
+    color: var(--secondary);
     font-weight: bolder;
-    font-size:1.5em;
+    font-size: 1.5em;
 }
 
 #floatingTextarea {
@@ -11038,10 +11041,10 @@ header {
     border-color: var(--secondary);
 }
 
-#user-head>h2{
-    color:var(--secondary);
-    font-weight:800;
-    font-size:2.5em;
+#user-head > h2 {
+    color: var(--secondary);
+    font-weight: 800;
+    font-size: 2.5em;
 }
 
 

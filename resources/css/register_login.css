@@ -2,6 +2,7 @@
 
 #sign_up_container{
     background-image:url('/img/sign_up_background.jpg');
+    background-repeat:no-repeat;
     background-position:center;
     background-size: cover;
     position:relative;
@@ -12,13 +13,14 @@
   .text-main{
     color:var(--main-color);
     font-weight: bold;
+    text-decoration: none;
     
   }
 
   .sign_up_input{
     
     box-shadow: rgba(0, 75, 87, 0.25) 0px 14px 28px, rgba(0, 75, 87, 0.22) 0px 10px 10px;
-    border:5px solid black;
+    border:5px solid var(--main-color);
     border-bottom: 10px var(--main-color);
     color: #e5edee;
 
@@ -36,6 +38,7 @@
     border: 2px solid var(--main-color) !important;
     border-radius:10px !important;
     font-weight: bold !important;
+    box-shadow: rgba(0, 75, 87, 0.25) 0px 14px 28px, rgba(0, 75, 87, 0.22) 0px 10px 10px;
     
   }
 
@@ -48,6 +51,33 @@
 
   }
 
-  #sign_up_container .form-control:hover{
+
+
+/* login view */
+  
+.login_input{
+    
+    box-shadow: rgba(0, 75, 87, 0.25) 0px 14px 28px, rgba(0, 75, 87, 0.22) 0px 10px 10px;
+    border:3px solid var(--main-color) !important;
+    border_radius:10px;
+    color: #e5edee;
+}
+
+#login_container{
+    background-image:url('/img/sign_up_background.jpg');
+    background-position:center;
+    background-size: cover;
+    position:relative;
+    padding-bottom:150px;
+    
+  }
+
+  #login_container .form-control{
+    border: 2px solid var(--main-color);
+    border-radius:10px;
+   
+  
 
   }
+
+  

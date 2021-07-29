@@ -11450,7 +11450,7 @@ section .section-title {
     
     box-shadow: rgba(0, 75, 87, 0.25) 0px 14px 28px, rgba(0, 75, 87, 0.22) 0px 10px 10px;
     border:3px solid var(--main-color) !important;
-    border_radius:10px;
+    border-radius:10px;
     color: #e5edee;
 }
 

@@ -29,6 +29,14 @@ class PublicController extends Controller
         return redirect (route('homepage'))->with('message', 'La tua mail è stata inviata correttamente');
 
     }
+
+    public function search(Request $request) {
+        $q = $request->input('q');
+
+        $announcements = Announcement::search($q)->where('is_accepted', true)->get();
+
+        return view('announcements.searched', compact('q', 'announcements'));
+    }
 }
 
 

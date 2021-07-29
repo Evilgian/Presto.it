@@ -43,3 +43,4 @@ Route::post('/revisor/accepted/{id}', [RevisorController::class, 'accept'])->nam
 Route::post('/revisor/rejected/{id}', [RevisorController::class, 'reject'])->name('revisor.rejected');
 Route::post('/revisor/undo/{id}', [RevisorController::class, 'undo'])->name('revisor.undo');
 
+Route::get('/search', [PublicController::class, 'search'])->name('search');

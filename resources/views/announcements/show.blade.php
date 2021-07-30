@@ -147,29 +147,33 @@
         <h3>Descrizione</h3>
         {{$announcement->description}}
       </div>
-      <a class="col-auto d-inline" href="{{route('announcement.edit', $announcement)}}"><button class="btn btn-outline-main">Modifica</button></a>
-      
-      
-      {{-- OFF CANVAS (Delete) --}}
-      <button class="col-auto btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="fas fa-trash"></i> Elimina</button>
-      
-      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title fw-bolder text-danger" id="offcanvasBottomLabel">Eliminazione annuncio</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      @if($announcement->user->id == Auth::id() || (((Auth::user()) && Auth::user()->is_revisor)))
+        
+        @if($announcement->user->id == Auth::id())
+          <a class="col-auto d-inline" href="{{route('announcement.edit', $announcement)}}"><button class="btn btn-outline-main">Modifica</button></a>
+        @endif
+
+        {{-- OFF CANVAS (Delete) --}}
+        <button class="col-auto btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="fas fa-trash"></i> Elimina</button>
+        
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bolder text-danger" id="offcanvasBottomLabel">Eliminazione annuncio</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body lead">
+            Procedere all'eliminazione dell'annuncio? L'azione è irreversibile
+          </div>
+          <form class="text-center" action="{{route('announcement.destroy', $announcement)}}" method="POST">
+            @csrf
+            @method('delete')
+            <button type="submit" class="mb-5 btn btn-outline-danger">
+              <i class="fas fa-trash"></i> Elimina
+            </button>
+          </form>
         </div>
-        <div class="offcanvas-body lead">
-          Procedere all'eliminazione dell'annuncio? L'azione è irreversibile
-        </div>
-        <form class="text-center" action="{{route('announcement.destroy', $announcement)}}" method="POST">
-          @csrf
-          @method('delete')
-          <button type="submit" class="mb-5 btn btn-outline-danger">
-            <i class="fas fa-trash"></i> Elimina
-          </button>
-        </form>
-      </div>
-      
+      @endif
+        
     </div>
   </div>
 </x-layout>

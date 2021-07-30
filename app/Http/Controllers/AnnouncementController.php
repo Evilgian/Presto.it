@@ -63,7 +63,7 @@ class AnnouncementController extends Controller
             'price'=> $request->input('price')
         ]);
 
-        return redirect(route('homepage'))->with('message', 'Il tuo annuncio è stato salvato');
+        return redirect(route('homepage'))->with('message', 'Annuncio registrato! Riceverai una e-mail all\'indirizzo usato in fase di registrazione quando il nostro staff avrà terminato il processo di moderazione');
     }
 
     /**

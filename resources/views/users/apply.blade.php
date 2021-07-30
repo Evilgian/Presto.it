@@ -8,13 +8,13 @@
                  @csrf
                 <!-- Name input -->
                 <div class="form-floating mb-3">
-                    <input type="text" name="name" id="floatingInput" class="form-control" placeholder="Nome"/>
-                    <label class="form-label" for="floatingInput">Nome</label>
+                    <input type="text" name="name" id="floatingName" class="form-control" placeholder="Nome"/>
+                    <label class="form-label" for="floatingName">Nome</label>
                 </div>
                 <!-- Email input -->
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Indirizzo email" />
-                    <label for="floatingInput">Indirizzo email</label>
+                    <input type="email" name="email" class="form-control" id="floatingMail" placeholder="Indirizzo email" />
+                    <label for="floatingMail">Indirizzo email</label>
                 </div>
                 <!-- Message input -->
                 <div class="form-floating mb-4">

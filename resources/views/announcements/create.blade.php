@@ -20,6 +20,7 @@
       <div class="col-12 col-md-6 mb-5">
         <form method="POST" action="{{route('announcement.store')}}">
           @csrf
+          <input type="hidden" name="secret" value="{{$secret}}">
           <div class="mb-3">
             <label for="title" class="form-label ">Titolo</label>
             <input type="text" value="{{old('title')}}" class="form-control @error('title') is-invalid @enderror" id="title" name="title" aria-describedby="emailHelp">
@@ -47,6 +48,19 @@
               <div>{{$message}}</div>
               @enderror
             </div>
+
+            <div class="form-group row mb-3">
+              <label for="images" class="col-12 col-form-label">Aggiungi immagini</label>
+              <div class="col-12">
+                <div class="dropzone" id="drophere"></div>
+                @error('images')
+                <div class="is-invalid" role="alert">
+                  <strong>{{$message}}</strong>
+                </div>
+                @enderror
+              </div>
+            </div>
+            
             <div class="mb-3">
               <label for="price" class="form-label">Prezzo</label>
               <input value="{{old('price')}}" type="number" id="price" name="price" class="form-control w-25 @error('price') is-invalid @enderror" step="0.1">

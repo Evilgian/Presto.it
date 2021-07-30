@@ -44,7 +44,8 @@ class AnnouncementController extends Controller
      */
     public function create()
     {
-        return view('announcements.create');
+        $secret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+        return view('announcements.create', compact('secret'));
     }
 
     /**
@@ -55,6 +56,7 @@ class AnnouncementController extends Controller
      */
     public function store(AnnouncementRequest $request)
     {
+        
         $announcement = Announcement::create([
             'title'=> $request->input('title'),
             'description'=> $request->input('description'),

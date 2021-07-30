@@ -3,9 +3,10 @@
 namespace App\Models;
 
 use App\Models\User;
+use Laravel\Scout\Searchable;
+use App\Models\AnnouncementImage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Laravel\Scout\Searchable;
 
 
 class Announcement extends Model
@@ -27,6 +28,10 @@ class Announcement extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function images(){
+        return $this->hasMany(AnnouncementImage::class);
     }
 
     public static function toBeRevisionedCount(){
@@ -66,6 +71,8 @@ class Announcement extends Model
         public function getPreview(){
             return $this->preview($this->description);
         }
+
+
     
     
 

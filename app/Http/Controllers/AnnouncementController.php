@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Models\AnnouncementImage;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\AnnouncementRequest;
 
 class AnnouncementController extends Controller
@@ -37,21 +40,70 @@ class AnnouncementController extends Controller
     }
 
     //! CREATE ======================================================
-    public function create()
+    public function create(Request $request)
     {
-        $secret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+        $secret = $request->old('secret', base_convert(sha1(uniqid(mt_rand())), 16, 36)) ;
         return view('announcements.create', compact('secret'));
     }
 
-    //! UPLOAD IMAGE ================================================
+    //! UPLOAD IMAGES ================================================
     public function uploadImages(Request $request){
         $secret = $request->input('secret');
         $fileName = $request->file('file')->store("public/temp/{$secret}");
         session()->push("images.{$secret}", $fileName);
-        return response()->json(
-            session()->get("images.{$secret}")
+        return response()->json([
+            'id' =>$fileName
+        ]
+            
         );
     }
+
+    //! REMOVE IMAGE ================================================
+    public function removeImage(Request $request){
+        $secret = $request->input('secret');
+        $fileName = $request->input('id');
+
+        session()->push("removedimages.{$secret}", $fileName);
+
+        Storage::delete($fileName);
+
+        return response()->json('ok');
+
+
+    }
+
+    //! GET IMAGES ======================================================
+    public function getImages(Request $request)
+    {
+        $secret = $request->input('secret');
+
+        $images = session()->get("images.{$secret}", []);
+        $removedImages = session()->get("removedimages.{$secret}", []);
+
+        $images = array_diff($images, $removedImages);
+
+        $data = [];
+
+        foreach($images as $image){
+
+            $data[] = [
+                'id' => $image,
+                'src' => Storage::url($image)
+
+            ];
+
+
+        }
+
+        return response()->json($data);
+
+
+    }
+
+
+
+
+
 
     //! STORE ======================================================
     public function store(AnnouncementRequest $request)
@@ -64,6 +116,32 @@ class AnnouncementController extends Controller
             'user_id' => Auth::id(),
             'price'=> $request->input('price')
         ]);
+
+        $secret = $request->input('secret');
+        
+        $images = session()->get("images.{$secret}", []);
+        $removedImages = session()->get("removedimages.{$secret}", []);
+
+        $images = array_diff($images, $removedImages);
+
+        foreach ($images as $image){
+
+            $i = new AnnouncementImage();
+
+            $fileName = basename($image);
+            $newFileName = "public/announcements/{$announcement->id}/{$fileName}";
+            $file = Storage::move($image, $newFileName);
+            $i->file = $newFileName;
+            $i->announcement_id = $announcement->id;
+
+            $i->save();
+
+
+        }
+
+        File::deleteDirectory(storage_path("/app/public/temp/{$secret}"));
+
+
 
         return redirect(route('homepage'))->with('message', 'Annuncio registrato! Riceverai una e-mail all\'indirizzo usato in fase di registrazione quando il nostro staff avrà terminato il processo di moderazione');
     }

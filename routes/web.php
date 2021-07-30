@@ -23,6 +23,9 @@ Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/annunci/index/{category?}', [AnnouncementController::class, 'index'])->name('announcements.index');
 Route::get('/annunci/nuovo', [AnnouncementController::class, 'create'])->name('announcement.create');
 Route::post('/announcement/images/upload', [AnnouncementController::class, 'uploadImages'])->name('images.upload');
+Route::delete('/announcement/images/remove', [AnnouncementController::class, 'removeImage'])->name('images.remove');
+Route::get('/announcement/images', [AnnouncementController::class, 'getImages'])->name('images.index');
+
 Route::post('/annunci/salva', [AnnouncementController::class, 'store'])->name('announcement.store');
 Route::get('/annunci/show/{announcement}', [AnnouncementController::class, 'show'])->name('announcement.show');
 Route::get('/annunci/modifica/{announcement}', [AnnouncementController::class, 'edit'])->name('announcement.edit');

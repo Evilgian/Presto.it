@@ -9,15 +9,12 @@ use App\Http\Requests\AnnouncementRequest;
 
 class AnnouncementController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function __construct(){
         $this->middleware('auth')->except(['index', 'show']);
     }
 
+    //! INDEX by USER ======================================================
     public function indexByUser($user=NULL){
         if($user){
             $announcements = Announcement::where('user_id', $user)->orderBy('id', 'DESC')->get();
@@ -27,6 +24,8 @@ class AnnouncementController extends Controller
         }
         return view('announcements.index', compact('announcements'));
     }
+
+    //! INDEX ======================================================
     public function index($category=NULL)
     {
         if($category){
@@ -37,23 +36,24 @@ class AnnouncementController extends Controller
         return view('announcements.index', compact('announcements'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    //! CREATE ======================================================
     public function create()
     {
         $secret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
         return view('announcements.create', compact('secret'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    //! UPLOAD IMAGE ================================================
+    public function uploadImages(Request $request){
+        $secret = $request->input('secret');
+        $fileName = $request->file('file')->store("public/temp/{$secret}");
+        session()->push("images.{$secret}", $fileName);
+        return response()->json(
+            session()->get("images.{$secret}")
+        );
+    }
+
+    //! STORE ======================================================
     public function store(AnnouncementRequest $request)
     {
         
@@ -68,23 +68,13 @@ class AnnouncementController extends Controller
         return redirect(route('homepage'))->with('message', 'Annuncio registrato! Riceverai una e-mail all\'indirizzo usato in fase di registrazione quando il nostro staff avrà terminato il processo di moderazione');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
+    //! SHOW ======================================================
     public function show(Announcement $announcement)
     {
         return view('announcements.show', compact('announcement'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
+    //! EDIT ======================================================
     public function edit(Announcement $announcement)
     {
         if(($announcement->user->id == Auth::id())){
@@ -94,13 +84,7 @@ class AnnouncementController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
+    //! UPDATE ======================================================
     public function update(Request $request, Announcement $announcement)
     {
         $announcement->title = $request->input('title');
@@ -112,12 +96,7 @@ class AnnouncementController extends Controller
         return redirect(route('announcement.show', compact('announcement')))->with('updated', 'Il tuo annuncio è stato modificato');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Announcement  $announcement
-     * @return \Illuminate\Http\Response
-     */
+    //! DESTROY ======================================================
     public function destroy(Announcement $announcement)
     {
         if(($announcement->user->id == Auth::id()) || Auth::user()->is_revisor){

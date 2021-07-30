@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>Presto!</title>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
   </head>
   <body>
         <x-navbar/>

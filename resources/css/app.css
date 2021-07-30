@@ -8,4 +8,8 @@
 
 
 @import 'register_login.css';
-@import 'card.css'
+@import 'card.css';
+
+
+@import'~dropzone/dist/basic';
+@import '~dropzone/dist/dropzone';

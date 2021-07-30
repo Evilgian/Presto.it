@@ -96,6 +96,7 @@ header {
 
 #header-txt {
     padding-left: 10%;
+    padding-right:10%;
 }
 
 #header-txt > h1 {
@@ -110,9 +111,9 @@ header {
 }
 
 .chevron {
-    position: absolute;
-    bottom: 10px;
-    left: 47%;
+    /* position: absolute;
+    bottom: 10px; */
+    /* left: 47%; */
     font-size: 6em;
     color: var(--main-color);
     transition: 0.2s;
@@ -120,8 +121,10 @@ header {
 .chevron:hover {
     color: var(--secondary);
 }
-.chevron:hover {
-    color: var(--secondary);
+.chevron-container {
+    position:absolute;
+    bottom:10px;
+    width:80%;
 }
 
 #apply-txt > h1 {

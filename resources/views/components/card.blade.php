@@ -6,7 +6,6 @@
 
 }
 
-
 </style>
 
 <div class="mb-5 col-12 col-md-4 mt-3 container-fluid cont_card" id="container-card">

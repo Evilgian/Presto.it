@@ -3,7 +3,7 @@
   <div class="container pt-3">
     <div class="row">
       <div class="col-12">
-        <h1 class="mt-5 fw-bold text-main text-center">Inserisci nuovo annuncio</h1>
+        <h1 class="mt-5 fw-bold text-main text-center mt-3">NUOVO ANNUNCIO</h1>
       </div>
     </div>
     {{-- DISPLAY VALIDATION ERRORS --}}
@@ -20,7 +20,7 @@
 
   <div class="container-fluid create_form_bg" id="container_create">
       
-    <div class="row my-5">
+    <div class="row my-5 mt-3">
       <div class="col-12 col-md-4 offset-md-4 col_form mb-5">
         <form method="POST" action="{{route('announcement.store')}}">
           @csrf

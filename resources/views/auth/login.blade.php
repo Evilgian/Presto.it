@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12 col-md-4 offset-md-4 col_form">
                 
-                <h1 class="text-main mt-3 text-center">LOGIN</h1>
+                <h1 class="text-main mt-4 text-center">LOGIN</h1>
                 <form method="POST" action="{{route('login')}}">
                     @csrf
                     <div class="mb-3 mt-5">

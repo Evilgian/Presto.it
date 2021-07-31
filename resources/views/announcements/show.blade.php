@@ -16,55 +16,22 @@
     </div>
     @endif
     <div class="row mt-5">
-      <!-- SLIDESHOW -->
       <div class="col-12 col-md-7 carousel text-center ">
+        @if (count($announcement->images) > 1)
+        <!-- SLIDESHOW -->
         <div class="swiper-container show main-slider loading">
           <div class="swiper-wrapper">
+            @foreach ($announcement->images as $image )
             <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/237/500/500)">
-                <img src="https://picsum.photos/id/237/500/500" class="entity-img" />
+              <figure class="slide-bgimg" style="background-image:url({{Storage::url($image->file)}})">
+                <img src="{{Storage::url($image->file)}}" class="entity-img" />
               </figure>
               <div class="content">
                 <p class="title"></p>
                 <span class="caption"></span>
               </div>
             </div>
-            <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/238/500/500)">
-                <img src="" class="entity-img" />
-              </figure>
-              <div class="content">
-                <p class="title"></p>
-                <span class="caption"></span>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/239/500/500)">
-                <img src="" class="entity-img" />
-              </figure>
-              <div class="content">
-                <p class="title"></p>
-                <span class="caption"></span>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/240/500/500)">
-                <img src="" class="entity-img" />
-              </figure>
-              <div class="content">
-                <p class="title"></p>
-                <span class="caption"></span>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/241/500/500)">
-                <img src="" class="entity-img" />
-              </figure>
-              <div class="content">
-                <p class="title"></p>
-                <span class="caption"></span>
-              </div>
-            </div>
+            @endforeach
           </div>
           <!-- If we need navigation buttons -->
           <div class="swiper-button-prev swiper-button-white"></div>
@@ -74,49 +41,27 @@
         <!-- Thumbnail navigation -->
         <div class="swiper-container show nav-slider loading">
           <div class="swiper-wrapper" role="navigation">
+            @foreach ($announcement->images as $image)
             <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/237/200/300)">
-                <img src="https://picsum.photos/id/237/200/300" class="entity-img" />
+              <figure class="slide-bgimg" style="background-image:url({{Storage::url($image->file)}})">
+                <img src="{{Storage::url($image->file)}}" class="entity-img" />
               </figure>
               <div class="content">
                 <p class="title"></p>
               </div>
-            </div>
-            <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/238/200/300)">
-                <img src="" class="entity-img" />
-              </figure>
-              <div class="content">
-                <p class="title"></p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/239/200/300)">
-                <img src="" class="entity-img" />
-              </figure>
-              <div class="content">
-                <p class="title"></p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/240/200/300)">
-                <img src="" class="entity-img" />
-              </figure>
-              <div class="content">
-                <p class="title"></p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/241/200/300)">
-                <img src="" class="entity-img" />
-              </figure>
-              <div class="content">
-                <p class="title"></p>
-              </div>
-            </div>
+            </div>  
+            @endforeach
           </div>
         </div>
+
+        @elseif (count($announcement->images)==1)
+        <img src="{{Storage::url($announcement->images[0]->file)}}" class="img-fluid">
+
+        @elseif (!count($announcement->images))
+        <div><img src="https://via.placeholder.com/500/500" class="img-fluid"></div>
+        @endif
       </div>
+      
       
       <!-- RIEPILOGO -->
       <div class="col-12 col-md-5">
@@ -148,32 +93,32 @@
         {{$announcement->description}}
       </div>
       @if($announcement->user->id == Auth::id() || (((Auth::user()) && Auth::user()->is_revisor)))
-        
-        @if($announcement->user->id == Auth::id())
-          <a class="col-auto d-inline" href="{{route('announcement.edit', $announcement)}}"><button class="btn btn-outline-main">Modifica</button></a>
-        @endif
-
-        {{-- OFF CANVAS (Delete) --}}
-        <button class="col-auto btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="fas fa-trash"></i> Elimina</button>
-        
-        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title fw-bolder text-danger" id="offcanvasBottomLabel">Eliminazione annuncio</h5>
-            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body lead">
-            Procedere all'eliminazione dell'annuncio? L'azione è irreversibile
-          </div>
-          <form class="text-center" action="{{route('announcement.destroy', $announcement)}}" method="POST">
-            @csrf
-            @method('delete')
-            <button type="submit" class="mb-5 btn btn-outline-danger">
-              <i class="fas fa-trash"></i> Elimina
-            </button>
-          </form>
-        </div>
+      
+      @if($announcement->user->id == Auth::id())
+      <a class="col-auto d-inline" href="{{route('announcement.edit', $announcement)}}"><button class="btn btn-outline-main">Modifica</button></a>
       @endif
-        
+      
+      {{-- OFF CANVAS (Delete) --}}
+      <button class="col-auto btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="fas fa-trash"></i> Elimina</button>
+      
+      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title fw-bolder text-danger" id="offcanvasBottomLabel">Eliminazione annuncio</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body lead">
+          Procedere all'eliminazione dell'annuncio? L'azione è irreversibile
+        </div>
+        <form class="text-center" action="{{route('announcement.destroy', $announcement)}}" method="POST">
+          @csrf
+          @method('delete')
+          <button type="submit" class="mb-5 btn btn-outline-danger">
+            <i class="fas fa-trash"></i> Elimina
+          </button>
+        </form>
+      </div>
+      @endif
+      
     </div>
   </div>
 </x-layout>

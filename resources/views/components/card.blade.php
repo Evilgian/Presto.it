@@ -25,7 +25,9 @@
                         <a href="{{route('announcement.show', $announcement)}}" class="btn btn-outline-main btn_details text-acc">Dettagli</a>
                     </div>
                     <div class="col-6">
-                        <img src="https://via.placeholder.com/150" class="img-fluid rounded">
+                        <img src="{{
+                        count($announcement->images) ? Storage::url($announcement->images[0]->file) : 'https://via.placeholder.com/150'
+                    }}" class="img-fluid rounded">
                     </div>
                 </div>
             </div>

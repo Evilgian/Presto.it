@@ -73,7 +73,11 @@
                             @foreach ($pending as $announcement)
                             <div class="swiper-slide border">
                                 <div class="card h-100 w-100">
-                                    <img src="https://via.placeholder.com/250" class="h-50 img-fluid" alt="...">
+                                    <img src="
+                                        {{
+                                        count($announcement->images) ? Storage::url($announcement->images[0]->file) : 'https://via.placeholder.com/250'
+                                        }}
+                                        " class="h-50 img-fluid" alt="...">
                                     <div class="card-body d-flex flex-column justify-content-around align-items-center">
                                         <h5 class="card-title">{{$announcement->title}}</h5>
                                         <p class="card-text">{{$announcement->getPreview()}}</p>
@@ -103,7 +107,11 @@
                         <div class="swiper-slide m-0 ">
                             <div class="swiper-slide">
                                 <div class="card h-100 w-100">
-                                    <img src="https://via.placeholder.com/250" class="h-50 img-fluid" alt="...">
+                                    <img src="
+                                        {{
+                                        count($announcement->images) ? Storage::url($announcement->images[0]->file) : 'https://via.placeholder.com/150'
+                                        }}
+                                        " class="h-50 img-fluid" alt="...">
                                     <div class="card-body d-flex flex-column justify-content-around align-items-center">
                                         <h5 class="card-title">{{$announcement->title}}</h5>
                                         <a href="{{route('announcement.show', $announcement)}}" class="btn btn-outline-main w-50">Vedi</a>

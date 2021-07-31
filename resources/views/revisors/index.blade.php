@@ -9,105 +9,50 @@
         
         <div class="row mt-5">
           <!-- SLIDESHOW -->
-          <div class="col-12 col-md-7 carousel text-center">
-              <div class="swiper-container show main-slider loading">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/237/500/500)">
-                        <img src="https://picsum.photos/id/237/500/500" class="entity-img" />
-                      </figure>
-                      <div class="content">
-                        <p class="title"></p>
-                        <span class="caption"></span>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/238/500/500)">
-                        <img src="" class="entity-img" />
-                      </figure>
-                      <div class="content">
-                        <p class="title"></p>
-                        <span class="caption"></span>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/239/500/500)">
-                        <img src="" class="entity-img" />
-                      </figure>
-                      <div class="content">
-                        <p class="title"></p>
-                        <span class="caption"></span>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/240/500/500)">
-                        <img src="" class="entity-img" />
-                      </figure>
-                      <div class="content">
-                        <p class="title"></p>
-                        <span class="caption"></span>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/241/500/500)">
-                        <img src="" class="entity-img" />
-                      </figure>
-                      <div class="content">
-                        <p class="title"></p>
-                        <span class="caption"></span>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- If we need navigation buttons -->
-                  <div class="swiper-button-prev swiper-button-white"></div>
-                  <div class="swiper-button-next swiper-button-white"></div>
-                </div>
-                
-                <!-- Thumbnail navigation -->
-                <div class="swiper-container show nav-slider loading">
-                  <div class="swiper-wrapper" role="navigation">
-                    <div class="swiper-slide">
-                      <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/237/200/300)">
-                        <img src="https://picsum.photos/id/237/200/300" class="entity-img" />
-                      </figure>
-                      <div class="content">
-                        <p class="title"></p>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/238/200/300)">
-                        <img src="" class="entity-img" />
-                      </figure>
-                      <div class="content">
-                        <p class="title"></p>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/239/200/300)">
-                        <img src="" class="entity-img" />
-                      </figure>
-                      <div class="content">
-                        <p class="title"></p>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/240/200/300)">
-                        <img src="" class="entity-img" />
-                      </figure>
-                      <div class="content">
-                        <p class="title"></p>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <figure class="slide-bgimg" style="background-image:url(https://picsum.photos/id/241/200/300)">
-                        <img src="" class="entity-img" />
-                      </figure>
-                      <div class="content">
-                        <p class="title"></p>
-                      </div>
-                    </div>
+          <div class="col-12 col-md-7 carousel text-center ">
+            @if (count($announcement->images) > 1)
+            <!-- SLIDESHOW -->
+            <div class="swiper-container show main-slider loading">
+              <div class="swiper-wrapper">
+                @foreach ($announcement->images as $image )
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url({{Storage::url($image->file)}})">
+                    <img src="{{Storage::url($image->file)}}" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                    <span class="caption"></span>
                   </div>
                 </div>
+                @endforeach
+              </div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev swiper-button-white"></div>
+              <div class="swiper-button-next swiper-button-white"></div>
+            </div>
+            
+            <!-- Thumbnail navigation -->
+            <div class="swiper-container show nav-slider loading">
+              <div class="swiper-wrapper" role="navigation">
+                @foreach ($announcement->images as $image)
+                <div class="swiper-slide">
+                  <figure class="slide-bgimg" style="background-image:url({{Storage::url($image->file)}})">
+                    <img src="{{Storage::url($image->file)}}" class="entity-img" />
+                  </figure>
+                  <div class="content">
+                    <p class="title"></p>
+                  </div>
+                </div>  
+                @endforeach
+              </div>
+            </div>
+    
+            @elseif (count($announcement->images)==1)
+            <img src="{{Storage::url($announcement->images[0]->file)}}" class="img-fluid">
+    
+            @elseif (!count($announcement->images))
+            <div><img src="https://via.placeholder.com/500/500" class="img-fluid"></div>
+            @endif
           </div>
       
           <!-- RIEPILOGO -->

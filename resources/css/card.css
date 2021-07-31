@@ -1,63 +1,60 @@
+.rounded{
+    border:3px solid var(--secondary);
+    border-radius: 50% !important;
+
+}
+.cont_card{
+    width: 30%;
+    
+}
+.card{
+    box-shadow: 10px 10px 10px rgba(0, 75, 87, 0.6),0 10px 15px 15px rgba(255, 157, 0, 0.6);
+    border:3px solid var(--secondary)!important;
+
+    border-radius:10%;
+    overflow:hidden;
+}
+
 .card-header{
-        
-    background-color:var(--main-color)!important;
-    border:2px solid var(--main-color);
-    color:var(--secondary)!important;
-    /* color:white !important; */
-
-    /* background:linear-gradient(90deg, #004b57, #ff9e00); */
-    border-bottom:none;
-
-
-
-}
-
-.card-body{
-    background-color: transparent;
-    border:2px solid var(--main-color);
-    
-
-}
-
-#container-card a{
-    color: var(--secondary);
-    /* color:white; */
-    
-}
-
-.btn_details{
-border: 2px solid var(--main-color) !important;
-border-radius:10px !important;
-font-weight: bold !important;
-color:var(--main-color) !important;
-
-
-}
-
-.btn_details:hover{
+    background-color: white !important;
     color:var(--secondary) !important;
+    font-weight: bold;
+    border:none;
 }
 
 .card-footer{
-    background-color:var(--main-color)!important;
-    /* background:linear-gradient(90deg, #004b57, #ff9e00); */
-    border:2px solid var(--main-color);
-    border-top:none;
-    
-    color:var(--secondary);
+    background-color: white !important;
+    color:var(--secondary)!important;
     font-weight:bold;
+    border:none;
 
+}
 
+.category-link{
+    color:var(--secondary)!important;
+    font-weight:bold;
+}
 
+.card-body{
+    background-color: transparent !important;
+    border:none;
 }
 
 .card-title{
-    color:var(--main-color)!important;
-    font-weight:bold;
-
+  color: var(--main-color);
+  font-weight:bold;
+  text-transform:uppercase;
 }
 
-.rounded{
-    border-radius:50% !important;
+.card-text{
+    color:var(--main-color);
+    font-weight:bold;
+}
+
+.btn_details{
+    border-radius:20%;
+    padding: 7% 7%;
     border:2px solid var(--main-color);
+    font-weight:bold;
+
 }

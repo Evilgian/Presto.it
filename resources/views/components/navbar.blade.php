@@ -10,10 +10,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+                <li>
+                    <div>
+                    <form action="{{route('search')}}" method="GET" class="w-100 mx-auto">
+                    
+                    <div class="input-group w-100">
+                        <div class="input-group-text"><i class="fas fa-search"></i></div>
+                        <input type="text" name="q" class="form-control-lg form-control search-bar" placeholder="Cerca!">
+                    </div>
+                    <button class="btn btn-outline-main d-none" type="submit">Cerca</button>
+                </form>
+                    </div>
+                </li>
+                
+                <li class="nav-item mx-2">
                     <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">Tutti gli annunci</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown mx-1">
                         
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Categorie

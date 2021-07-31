@@ -1,6 +1,5 @@
 <x-layout>
-
-
+    
     @if(session('message'))
     <div class="alert alert-success my-0">
         {{session('message')}}
@@ -10,7 +9,7 @@
         <header class="row align-items-center">
             <div id="header-txt">
                 <h1>PRESTO!</h1>
-                <h5 class="font-weight-bold">Ché oggi è già domani!</h5>
+                <h5 class="font-weight-bold text-main">Ché oggi è già domani!</h5>
                 
                 
                 <form action="{{route('search')}}" method="GET" class="w-75 mx-auto mt-5">

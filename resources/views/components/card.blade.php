@@ -1,20 +1,11 @@
-<style>
 
-.rounded{
-    border:2px solid var(--main-color);
-
-
-}
-
-</style>
-
-<div class="mb-5 col-12 col-md-4 mt-3 container-fluid cont_card" id="container-card">
+<div class="col-12 col-md-4 mt-5 mb-5 container-fluid cont_card" id="container-card">
     @php
         $max_length = 60;
     @endphp
-        <div class="card h-100">
+        <div class="card h-100 mt-3 mb-5">
             <div class="card-header bg-main">
-                <a class="category-link text-main" href="{{route('announcements.index', $announcement->category->id)}}">{{$announcement->category->name}}</a>
+                <a class="category-link" href="{{route('announcements.index', $announcement->category->id)}}">{{$announcement->category->name}}</a>
             </div>
             <div class="card-body bg-acc">
                 <div class="row">

@@ -2,7 +2,7 @@
     background-image:url('/img/sign_up_background.jpg');
     background-position:center;
     background-size: cover;
-    repeat:no-repeat;
+    background-repeat:no-repeat;
   }
 
   #container_create .sign_up_input{
@@ -18,5 +18,24 @@
   .box_inserimento_immagini{
     background-color: transparent !important;
     border: 3px solid var(--main-color) !important;
+    backdrop-filter: blur(2px)!important;
+    
    
   }
+
+  .dz-preview{
+    background-color: transparent !important;
+  }
+
+  .dz-remove{
+    color: var(--main-color)!important;
+    font-weight: bold !important;
+    text-decoration:none !important;
+  }
+
+  .dz-remove:hover{
+    color: #c20000 !important;
+
+  }
+
+ 

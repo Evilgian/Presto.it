@@ -23,6 +23,7 @@
     border:3px solid var(--main-color);
     border-bottom: 10px var(--main-color);
     color:var(--main-color);
+    background-color: transparent !important;
 
 
   }

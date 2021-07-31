@@ -4,7 +4,7 @@
         <div class="col-12 col-md-4 offset-md-4 col_form mb-5">
 
 
-          <h1 class="text-main">SIGN UP</h1>
+          <h1 class="text-main text-center mt-3">CREA ACCOUNT</h1>
           
           @if ($errors->any())
               <div class="alert alert-danger">
@@ -17,7 +17,7 @@
           @endif
           <form method="POST" action="{{route('register')}}" enctype="multipart/form-data">
               @csrf
-              <div class="mb-3">
+              <div class="mb-3 mt-5 ">
                   <label for="name" class="form-label text-main">Nome Utente</label>
                   <input type="text" id="name" name="name" class="form-control sign_up_input">
               </div>
@@ -38,7 +38,7 @@
                 <label for="exampleInputPassword1" class="form-label text-main">Conferma Password</label>
                 <input type="password" class="form-control sign_up_input" name="password_confirmation" id="exampleInputPassword1">
               </div>
-              <div class="text-center"><button type="submit" class="btn btn-outline-main  btn_sign_up">Submit</button></div>
+              <div class="text-center"><button type="submit" class="btn btn-outline-main  btn_sign_up">Registrati</button></div>
               
             </form>
         </div>

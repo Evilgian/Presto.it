@@ -73,7 +73,7 @@
               @enderror
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-outline-main btn_sign_up mt-5 mx-auto">Submit</button>
+              <button type="submit" class="btn btn-outline-main btn_sign_up mt-5 mx-auto">Invia!</button>
 
             </div>
           </form>

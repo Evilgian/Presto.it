@@ -1,4 +1,6 @@
 <x-layout>
+
+
     @if(session('message'))
     <div class="alert alert-success my-0">
         {{session('message')}}

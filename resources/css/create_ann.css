@@ -1,0 +1,22 @@
+.create_form_bg{
+    background-image:url('/img/sign_up_background.jpg');
+    background-position:center;
+    background-size: cover;
+    repeat:no-repeat;
+  }
+
+  #container_create .sign_up_input{
+    border: 3px solid var(--main-color) !important;
+  }
+
+  .category_select{
+    color: var(--secondary) !important;
+    font-weight: bold !important;
+    background-color: var(--main-color);
+  }
+
+  .box_inserimento_immagini{
+    background-color: transparent !important;
+    border: 3px solid var(--main-color) !important;
+   
+  }

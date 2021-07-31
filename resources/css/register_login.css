@@ -22,7 +22,7 @@
     box-shadow: rgba(0, 75, 87, 0.25) 0px 14px 28px, rgba(0, 75, 87, 0.22) 0px 10px 10px;
     border:3px solid var(--main-color);
     border-bottom: 10px var(--main-color);
-    color: #e5edee;
+    color:var(--main-color);
 
 
   }

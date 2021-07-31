@@ -11414,7 +11414,7 @@ section .section-title {
     box-shadow: rgba(0, 75, 87, 0.25) 0px 14px 28px, rgba(0, 75, 87, 0.22) 0px 10px 10px;
     border:3px solid var(--main-color);
     border-bottom: 10px var(--main-color);
-    color: #e5edee;
+    color:var(--main-color);
 
 
   }
@@ -11543,6 +11543,28 @@ color:var(--main-color) !important;
     border-radius:50% !important;
     border:2px solid var(--main-color);
 }
+.create_form_bg{
+    background-image:url('/img/sign_up_background.jpg');
+    background-position:center;
+    background-size: cover;
+    repeat:no-repeat;
+  }
+
+  #container_create .sign_up_input{
+    border: 3px solid var(--main-color) !important;
+  }
+
+  .category_select{
+    color: var(--secondary) !important;
+    font-weight: bold !important;
+    background-color: var(--main-color);
+  }
+
+  .box_inserimento_immagini{
+    background-color: transparent !important;
+    border: 3px solid var(--main-color) !important;
+   
+  }
 .dropzone, .dropzone * {
   box-sizing: border-box;
 }

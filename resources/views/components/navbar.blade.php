@@ -15,7 +15,7 @@
                     <form action="{{route('search')}}" method="GET" class="w-100 mx-auto">
                         <div class="input-group w-100">
                             <div class="input-group-text"><i class="fas fa-search"></i></div>
-                            <input type="text" name="q" class="form-control form-control search-bar" placeholder="Cerca!">
+                            <input type="text" name="q" class="form-control search-bar" placeholder="Cerca!">
                         </div>
                         <button class="btn btn-outline-main d-none" type="submit">Cerca</button>
                     </form>

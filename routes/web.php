@@ -51,3 +51,5 @@ Route::post('/revisor/rejected/{id}', [RevisorController::class, 'reject'])->nam
 Route::post('/revisor/undo/{id}', [RevisorController::class, 'undo'])->name('revisor.undo');
 
 Route::get('/search', [PublicController::class, 'search'])->name('search');
+
+Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale');

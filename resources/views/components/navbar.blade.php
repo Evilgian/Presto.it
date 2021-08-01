@@ -8,8 +8,20 @@
             {{-- <span class="navbar-toggler-icon"></span> --}}
             <i class="fas fa-ellipsis-v"></i>
         </button>
+       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {{-- Bandiere --}}
+                {{-- <li class="nav-item">
+                    <x-locale lang="it", nation="it"></x-locale>
+                </li>
+                <li class="nav-item">
+                    <x-locale lang="en", nation="gb"></x-locale>
+                </li>
+                <li class="nav-item">
+                    <x-locale lang="es", nation="es"></x-locale>
+                </li> --}}
+
                 <li>
                     <div>
                     <form action="{{route('search')}}" method="GET" class="w-100 mx-auto">

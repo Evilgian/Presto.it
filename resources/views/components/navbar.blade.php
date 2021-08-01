@@ -11,7 +11,7 @@
        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                {{-- Bandiere --}}
+                
                 {{-- <li class="nav-item">
                     <x-locale lang="it", nation="it"></x-locale>
                 </li>
@@ -22,16 +22,15 @@
                     <x-locale lang="es", nation="es"></x-locale>
                 </li> --}}
 
-                <li>
+                <li id="navbar-search">
                     <div>
                     <form action="{{route('search')}}" method="GET" class="w-100 mx-auto">
-                    
-                    <div class="input-group w-100">
-                        <div class="input-group-text"><i class="fas fa-search"></i></div>
-                        <input type="text" name="q" class="form-control-lg form-control search-bar" placeholder="Cerca!">
-                    </div>
-                    <button class="btn btn-outline-main d-none" type="submit">Cerca</button>
-                </form>
+                        <div class="input-group w-100">
+                            <div class="input-group-text"><i class="fas fa-search"></i></div>
+                            <input type="text" name="q" class="form-control search-bar" placeholder="Cerca!">
+                        </div>
+                        <button class="btn btn-outline-main d-none" type="submit">Cerca</button>
+                    </form>
                     </div>
                 </li>
                 

@@ -1,5 +1,33 @@
+<style>
+
+  #container-dettaglio{
+    background-image:url('/img/sign_up_background.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+
+  }
+  
+  .text-detail{
+    font-weight:bold !important;
+    color:var(--main-color);
+
+  }
+
+  .bg-description{
+    background-color: ffffff;
+    
+  }
+
+
+
+
+
+</style>
+
+
 <x-layout>
-  <div class="container pt-3">
+  <div class="container pt-3" id="container-dettaglio">
     @if($announcement->is_accepted === NULL)
     <div class="alert alert-warning">Il tuo annuncio è in corso di moderazione </div>
     @endif
@@ -65,13 +93,13 @@
       
       
       <!-- RIEPILOGO -->
-      <div class="col-12 col-md-5">
+      <div class="col-12 col-md-5 bg-description">
         <div class="row h-100 flex-column justify-content-between">
           <div class="col-12">
-            <a href="{{route('announcements.index', $announcement->category->id)}}" class="txt-secondary">{{$announcement->category->name}}</a>
-            <div>{{$announcement->created_at->format('d/m/Y')}} alle {{$announcement->created_at->format('H:i')}}</div>
-            <h2>{{$announcement->title}}</h2>
-            <h4>€ {{number_format($announcement->price, 2, ',', '.');}}</h4>
+            <a href="{{route('announcements.index', $announcement->category->id)}}" class="txt-secondary text-detail">{{$announcement->category->name}}</a>
+            <div class="text-detail">{{$announcement->created_at->format('d/m/Y')}} alle {{$announcement->created_at->format('H:i')}}</div>
+            <h2 class="text-detail">{{$announcement->title}}</h2>
+            <h4 class="text-detail">€ {{number_format($announcement->price, 2, ',', '.');}}</h4>
           </div>
           <div class="col-12">
             <div class="row align-items-center">
@@ -79,7 +107,7 @@
                 <img src="{{$announcement->user->img ? Storage::url($announcement->user->img) : '/img/layout/avatar_male.jpeg'}}" class="rounded-circle img-fluid">
               </div>
               <div class="col-9">
-                <h4>{{$announcement->user->name}}</h4>
+                <h4 class="text-detail">{{$announcement->user->name}}</h4>
               </div>
             </div>
           </div>
@@ -90,7 +118,7 @@
     </div>
     <div class="row">
       <div class="col-12 lead mt-3 ">
-        <h3>Descrizione</h3>
+        <h3 class="text-detail">Descrizione</h3>
         {{$announcement->description}}
       </div>
       @if($announcement->user->id == Auth::id() || (((Auth::user()) && Auth::user()->is_revisor)))

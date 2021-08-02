@@ -10,6 +10,7 @@
 @import 'register_login.css';
 @import 'card.css';
 @import 'create_ann.css';
+@import 'show.css';
 
 
 @import'~dropzone/dist/basic';

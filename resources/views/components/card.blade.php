@@ -3,26 +3,21 @@
     @php
         $max_length = 60;
     @endphp
-        <div class="card h-100 mt-3 mb-5">
-            <div class="card-header bg-main">
-                <a class="category-link" href="{{route('announcements.index', $announcement->category->id)}}">{{$announcement->category->name}}</a>
+        <div class="card card-index h-100 mt-3 mb-5 bg-white">
+            <div class="card-header bg-white d-flex justify-content-between txt-secondary mt-2 mx-1 pb-0">
+                <a class='txt-secondary' href="{{route('announcements.index', $announcement->category->id)}}">{{$announcement->category->name}}</a>
+                <p>{{$announcement->created_at->format('d/m/Y')}}</p>
             </div>
-            <div class="card-body bg-acc">
-                <div class="row">
-                    <div class="col-6">
-                        <h5 class="h3 fw-bold text-sec card-title">{{$announcement->title}}</h5>
-                        <p class="card-text">{{strlen($announcement->description)<$max_length ? $announcement->description : substr($announcement->description, 0, ($max_length-3)).'...'}}</p>
-                        <a href="{{route('announcement.show', $announcement)}}" class="btn btn-outline-main btn_details text-acc">Dettagli</a>
-                    </div>
-                    <div class="col-6">
-                        <img src="{{
-                        count($announcement->images) ? Storage::url($announcement->images[0]->getUrl(500, 500)) : 'https://via.placeholder.com/150'
-                    }}" class="img-fluid rounded">
-                    </div>
-                </div>
+            <div class="card-body d-flex flex-column justify-content-around align-items-center px-3 mt-0 pt-0">
+              <img src="{{count($announcement->images) ? ($announcement->images[0]->getUrl(500, 500)) : 'https://via.placeholder.com/150'
+                    }}" class="img-fluid">
+                <h5 class="h3 fw-bold text-main pt-3 text-center">{{$announcement->title}}</h5>
+                <p class="card-text">{{$announcement->getPreview()}}</p>
+                <h4>€{{$announcement->price}}</h4>
+                <a href="{{route('announcement.show', $announcement)}}" class="btn btn-card-index">Dettagli</a>
             </div>
-            <div class="card-footer bg-main text-end">
-                {{$announcement->created_at->format('d/m/Y')}}
+            <div class="card-footer bg-white text-end text-muted">
+                {{$announcement->user->name}}
             </div>
         </div>
 </div>

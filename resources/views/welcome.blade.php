@@ -1,5 +1,5 @@
 <x-layout>
-    
+    {{-- {{dd(Request::getPreferredLanguage())}} --}}
     @if(session('message'))
     <div class="alert alert-success my-0">
         {{session('message')}}

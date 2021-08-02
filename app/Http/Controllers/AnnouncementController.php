@@ -178,8 +178,18 @@ class AnnouncementController extends Controller
     public function destroy(Announcement $announcement)
     {
         if(($announcement->user->id == Auth::id()) || Auth::user()->is_revisor){
+            //* Elimino la cartella dove sono fisicamente conservati i file
+            File::deleteDirectory(storage_path("/app/public/announcements/{$announcement->id}"));
+
+            //* Elimino iterativamente i record dalla tabella announcement_images
+            foreach($announcement->images as $image){
+                echo $image->filename;
+                $image->delete();
+            }
+
+            //* Elimino il record dell'annuncio dalla tabella announcements
             $announcement->delete();
-            return redirect(route('announcement.index'))->with('deleted', 'L\'annuncio è stato eliminato');
+            return redirect(route('announcements.index'))->with('deleted', 'L\'annuncio è stato eliminato');
         } else {
             return redirect(route('homepage'));
         }

@@ -8,16 +8,10 @@ use Illuminate\Support\Facades\App;
 
 class SetLocaleMiddleware
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
+    CONST LOCALES = ['it', 'en', 'es'];
     public function handle(Request $request, Closure $next)
     {
-        $locale = session('locale', 'it');
+        $locale = session('locale') ? session('locale') : $request->getPreferredLanguage(self::LOCALES);
         App::setlocale($locale);
         
         return $next($request);

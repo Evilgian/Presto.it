@@ -10917,6 +10917,10 @@ body {
     background-color: var(--sec-color);
 }
 
+.bg-white {
+    background-color: var(--white) !important;
+}
+
 .bg-acc {
     background-color: var(--accent-color);
 }
@@ -10964,6 +10968,7 @@ body {
     background-color: #fff;
 }
 
+<<<<<<< HEAD
 .card:hover {
     /* transform: scale(1.05); */
     /* transition: 0.3s; */
@@ -10975,6 +10980,14 @@ header {
     position: relative;
     height: calc(100vh - 58px);
     background-image: url("/img/layout/header_bello.jpg") !important;
+=======
+/*! HEADER */
+header {
+    position: relative;
+    height: calc(100vh - 58px);
+    background-image: linear-gradient(90deg, #ff9e00, transparent, #ff9e00),
+        url("/img/layout/header_bg.jpeg") !important;
+>>>>>>> ef28516773cad38f9528860359e041bea19743de
     background-size: cover;
     background-position: center;
     margin-bottom: 30px;
@@ -10982,7 +10995,7 @@ header {
 
 #header-txt {
     padding-left: 10%;
-    padding-right:10%;
+    padding-right: 10%;
 }
 
 #header-txt > h1 {
@@ -11008,9 +11021,9 @@ header {
     color: var(--secondary);
 }
 .chevron-container {
-    position:absolute;
-    bottom:10px;
-    width:80%;
+    position: absolute;
+    bottom: 10px;
+    width: 80%;
 }
 
 #apply-txt > h1 {
@@ -11480,7 +11493,7 @@ section .section-title {
 
 
 
-.rounded{
+/* .rounded{
     border:3px solid var(--secondary);
     border-radius: 50% !important;
 
@@ -11539,7 +11552,45 @@ section .section-title {
     border:2px solid var(--main-color);
     font-weight:bold;
 
+} */
+
+.card-index {
+    overflow: hidden;
+    transition: all 0.2s;
 }
+
+.card-index {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card-index .card-header {
+    border-bottom: none;
+}
+
+.card-index .card-header a {
+    text-decoration: none;
+}
+
+.card-index .card-footer {
+    border-top: none;
+}
+
+.card-index {
+    border-radius: 30px;
+    border: var(--main-color) 1px solid;
+}
+
+.btn-card-index {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn-card-index:hover {
+    background-color: var(--white);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
 .create_form_bg{
     background-image:url('/img/sign_up_background.jpg');
     background-position:center;

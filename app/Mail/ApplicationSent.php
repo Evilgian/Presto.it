@@ -11,23 +11,13 @@ class ApplicationSent extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-
-     public $contact;
+    public $contact;
+    
     public function __construct($contact)
     {
         $this->contact=$contact;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
         return $this->from('applications@presto.it')->view('mails.applicationSent');

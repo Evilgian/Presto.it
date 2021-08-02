@@ -1,4 +1,4 @@
-.rounded{
+/* .rounded{
     border:3px solid var(--secondary);
     border-radius: 50% !important;
 
@@ -57,4 +57,41 @@
     border:2px solid var(--main-color);
     font-weight:bold;
 
+} */
+
+.card-index {
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.card-index {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card-index .card-header {
+    border-bottom: none;
+}
+
+.card-index .card-header a {
+    text-decoration: none;
+}
+
+.card-index .card-footer {
+    border-top: none;
+}
+
+.card-index {
+    border-radius: 30px;
+    border: var(--main-color) 1px solid;
+}
+
+.btn-card-index {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn-card-index:hover {
+    background-color: var(--white);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
 }

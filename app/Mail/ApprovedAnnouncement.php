@@ -18,11 +18,6 @@ class ApprovedAnnouncement extends Mailable
         $this->announcement = $announcement;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
         return $this->from('moderation@presto.it')

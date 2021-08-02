@@ -23,9 +23,10 @@
           <div class="swiper-wrapper">
             @foreach ($announcement->images as $image )
             <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url({{Storage::url($image->file)}})">
-                <img src="{{Storage::url($image->file)}}" class="entity-img" />
+              <figure class="slide-bgimg" style="background-image:url({{($image->getUrl(500, 500))}})">
+                <img src="{{($image->getUrl(500, 500))}}" class="entity-img" />
               </figure>
+              {{-- {{dd(Storage::url($image->getUrl(500, 500)))}} --}}
               <div class="content">
                 <p class="title"></p>
                 <span class="caption"></span>
@@ -43,8 +44,8 @@
           <div class="swiper-wrapper" role="navigation">
             @foreach ($announcement->images as $image)
             <div class="swiper-slide">
-              <figure class="slide-bgimg" style="background-image:url({{Storage::url($image->file)}})">
-                <img src="{{Storage::url($image->file)}}" class="entity-img" />
+              <figure class="slide-bgimg" style="background-image:url({{($image->getUrl(150, 150))}})">
+                <img src="{{($image->getUrl(150, 150))}}" class="entity-img" />
               </figure>
               <div class="content">
                 <p class="title"></p>
@@ -55,7 +56,7 @@
         </div>
 
         @elseif (count($announcement->images)==1)
-        <img src="{{Storage::url($announcement->images[0]->file)}}" class="img-fluid">
+        <img src="{{($announcement->images[0]->getUrl(500, 500))}}" class="img-fluid">
 
         @elseif (!count($announcement->images))
         <div><img src="https://via.placeholder.com/500/500" class="img-fluid"></div>

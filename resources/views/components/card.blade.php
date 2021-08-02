@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-6">
                         <img src="{{
-                        count($announcement->images) ? Storage::url($announcement->images[0]->file) : 'https://via.placeholder.com/150'
+                        count($announcement->images) ? Storage::url($announcement->images[0]->getUrl(500, 500)) : 'https://via.placeholder.com/150'
                     }}" class="img-fluid rounded">
                     </div>
                 </div>

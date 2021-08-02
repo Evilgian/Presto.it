@@ -3,7 +3,7 @@
   <div class="container pt-3">
     <div class="row">
       <div class="col-12">
-        <h1 class="mt-5 fw-bold text-main text-center mt-3">NUOVO ANNUNCIO</h1>
+        <h1 class="mt-5 fw-bold text-main text-center mt-3">{{__('ui.new')}}</h1>
       </div>
     </div>
     {{-- DISPLAY VALIDATION ERRORS --}}

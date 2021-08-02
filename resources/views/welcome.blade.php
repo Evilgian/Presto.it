@@ -9,14 +9,14 @@
         <header class="row align-items-center">
             <div id="header-txt">
                 <h1>PRESTO!</h1>
-                <h5 class="font-weight-bold text-main">Ché oggi è già domani!</h5>
+                <h5 class="font-weight-bold text-main">{{__('ui.welcome')}}</h5>
                 
                 
                 <form action="{{route('search')}}" method="GET" class="w-75 mx-auto mt-5">
                     
                     <div class="input-group">
                         <div class="input-group-text"><i class="fas fa-search"></i></div>
-                        <input type="text" name="q" class="form-control-lg form-control search-bar" placeholder="Find something amazing!">
+                        <input type="text" name="q" class="form-control-lg form-control search-bar" placeholder="{{__('ui.find')}}">
                     </div>
                     <button class="btn btn-outline-main d-none" type="submit">Cerca</button>
                 </form>

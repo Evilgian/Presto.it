@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="{{route('homepage')}}">Presto!</a>
         <a href="{{route('announcement.create')}}">
-            <button class="btn btn-new">Nuovo Annuncio</button>
+            <button class="btn btn-new">{{__('ui.new')}}</button>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             {{-- <span class="navbar-toggler-icon"></span> --}}
@@ -12,35 +12,50 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 
-                {{-- <li class="nav-item">
-                    <x-locale lang="it", nation="it"></x-locale>
+                <li class="nav-item">
+                    <form method="POST" action="{{route('locale', 'it')}}">
+                        @csrf
+                            <button type="submit" class="nav-link">
+                                <span class="flag-icon flag-icon-it"></span>
+                            </button>
+                    </form>
                 </li>
                 <li class="nav-item">
-                    <x-locale lang="en", nation="gb"></x-locale>
+                    <form method="POST" action="{{route('locale', 'en')}}">
+                        @csrf
+                            <button type="submit" class="nav-link">
+                                <span class="flag-icon flag-icon-gb"></span>
+                            </button>
+                    </form>
                 </li>
                 <li class="nav-item">
-                    <x-locale lang="es", nation="es"></x-locale>
-                </li> --}}
+                    <form method="POST" action="{{route('locale', 'es')}}">
+                        @csrf
+                            <button type="submit" class="nav-link">
+                                <span class="flag-icon flag-icon-es"></span>
+                            </button>
+                    </form>
+                </li>
 
                 <li id="navbar-search">
                     <div>
                     <form action="{{route('search')}}" method="GET" class="w-100 mx-auto">
                         <div class="input-group w-100">
                             <div class="input-group-text"><i class="fas fa-search"></i></div>
-                            <input type="text" name="q" class="form-control search-bar" placeholder="Cerca!">
+                            <input type="text" name="q" class="form-control search-bar" placeholder="{{__('ui.search')}}">
                         </div>
-                        <button class="btn btn-outline-main d-none" type="submit">Cerca</button>
+                        <button class="btn btn-outline-main d-none" type="submit"></button>
                     </form>
                     </div>
                 </li>
                 
                 <li class="nav-item mx-2">
-                    <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">Tutti gli annunci</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('announcements.index')}}">{{__('ui.all')}}</a>
                 </li>
                 <li class="nav-item dropdown mx-1">
                         
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Categorie
+                        {{__('ui.categories')}}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach ($categories as $c)

@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container pt-3">
-        <h2>Modifica annuncio</h2>
+        <h2>{{__('ui.modify')}}</h2>
         <form method="POST" action="{{route('announcement.update', $announcement)}}">
             @csrf
             @method('put')

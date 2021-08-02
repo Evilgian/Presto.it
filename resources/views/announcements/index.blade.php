@@ -3,7 +3,7 @@
     <div class="container mt-3">
       <div class="row">
         <div class="col-12">
-          <h2 class="mt-5 fw-bold text-main text-center">Tutti gli annunci</h2>
+          <h2 class="mt-5 fw-bold text-main text-center">{{__('ui.all')}}</h2>
         </div>
       </div>
       <div class="row mt-5">

@@ -15,7 +15,7 @@
                 <li class="nav-item">
                     <form method="POST" action="{{route('locale', 'it')}}">
                         @csrf
-                            <button type="submit" class="nav-link">
+                            <button type="submit" class="nav-link btn">
                                 <span class="flag-icon flag-icon-it"></span>
                             </button>
                     </form>
@@ -23,7 +23,7 @@
                 <li class="nav-item">
                     <form method="POST" action="{{route('locale', 'en')}}">
                         @csrf
-                            <button type="submit" class="nav-link">
+                            <button type="submit" class="nav-link btn">
                                 <span class="flag-icon flag-icon-gb"></span>
                             </button>
                     </form>
@@ -31,7 +31,7 @@
                 <li class="nav-item">
                     <form method="POST" action="{{route('locale', 'es')}}">
                         @csrf
-                            <button type="submit" class="nav-link">
+                            <button type="submit" class="nav-link btn">
                                 <span class="flag-icon flag-icon-es"></span>
                             </button>
                     </form>

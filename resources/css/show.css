@@ -1,0 +1,18 @@
+#container-dettaglio{
+    background-image:url('/img/sign_up_background.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:cover;
+
+  }
+  
+  .text-detail{
+    font-weight:bold !important;
+    color:var(--main-color);
+
+  }
+
+  .bg-description{
+    background-color: ffffff;
+    
+  }

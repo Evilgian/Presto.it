@@ -53,7 +53,7 @@ $(function() {
         });
 
         myDropzone.on("removedfile", function(file){
-            $ajax({
+            $.ajax({
                 type:'DELETE',
                 url: '/announcement/images/remove',
                 data:{

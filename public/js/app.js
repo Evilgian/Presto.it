@@ -3124,6 +3124,8 @@ $(function () {
         secret: secret
       },
       addRemoveLinks: true,
+      dictDefaultMessage: "<i class=\"fas fa-upload fa-3x\" ></i><br><strong>Drop files here</strong> or click to upload. ",
+      dictRemoveFile: "<i class=\"fas fa-remove\"></i>",
       init: function init() {
         $.ajax({
           type: 'GET',
@@ -3182,6 +3184,8 @@ document.Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone
 Dropzone.autoDiscover = false;
 
 __webpack_require__(/*! ./announcementImages.js */ "./resources/js/announcementImages.js");
+
+__webpack_require__(/*! ./editImages */ "./resources/js/editImages.js");
 
 /***/ }),
 
@@ -3279,6 +3283,24 @@ var navSlider = new Swiper(navSliderSelector, navSliderOptions); // Matching sli
 
 mainSlider.controller.control = navSlider;
 navSlider.controller.control = mainSlider;
+
+/***/ }),
+
+/***/ "./resources/js/editImages.js":
+/*!************************************!*\
+  !*** ./resources/js/editImages.js ***!
+  \************************************/
+/***/ (() => {
+
+var rmvBtns = document.querySelectorAll('.removeImg');
+
+if (rmvBtns) {
+  rmvBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btn.parentElement.parentElement.classList.add('d-none');
+    });
+  });
+}
 
 /***/ }),
 

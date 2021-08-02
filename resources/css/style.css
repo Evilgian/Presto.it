@@ -30,6 +30,10 @@ body {
     background-color: var(--sec-color);
 }
 
+.bg-white {
+    background-color: var(--white) !important;
+}
+
 .bg-acc {
     background-color: var(--accent-color);
 }
@@ -77,18 +81,12 @@ body {
     background-color: #fff;
 }
 
-.card:hover {
-    /* transform: scale(1.05); */
-    /* transition: 0.3s; */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
-}
-
 /*! HEADER */
 header {
     position: relative;
     height: calc(100vh - 58px);
     background-image: linear-gradient(90deg, #ff9e00, transparent, #ff9e00),
-           url("/img/layout/header_bg.jpeg") !important;
+        url("/img/layout/header_bg.jpeg") !important;
     background-size: cover;
     background-position: center;
     margin-bottom: 30px;
@@ -96,7 +94,7 @@ header {
 
 #header-txt {
     padding-left: 10%;
-    padding-right:10%;
+    padding-right: 10%;
 }
 
 #header-txt > h1 {
@@ -122,9 +120,9 @@ header {
     color: var(--secondary);
 }
 .chevron-container {
-    position:absolute;
-    bottom:10px;
-    width:80%;
+    position: absolute;
+    bottom: 10px;
+    width: 80%;
 }
 
 #apply-txt > h1 {

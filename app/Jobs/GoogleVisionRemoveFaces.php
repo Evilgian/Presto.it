@@ -44,8 +44,10 @@ class GoogleVisionRemoveFaces implements ShouldQueue
         $faces = $response->getFaceAnnotations();
 
         foreach($faces as $face) {
-            $vertices = $face -> getBoundingPoly()->getVertices();
+            $vertices = $face->getBoundingPoly()->getVertices();
 
+            $bounds = [];
+            
             foreach($vertices as $vertex) {
                 $bounds[] = [$vertex->getX(), $vertex->getY()];
 
@@ -62,7 +64,6 @@ class GoogleVisionRemoveFaces implements ShouldQueue
                   ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
                   ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
                   ->watermarkFit(Manipulations::FIT_STRETCH);
-
                   $image->save();
         }
 

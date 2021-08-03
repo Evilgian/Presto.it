@@ -7,8 +7,8 @@
       </div>
         @if ($announcement)
         
-        <div class="row mt-5">
-          <!-- SLIDESHOW -->
+        <div class="row shadow border p-3 mt-5">
+          {{-- <!-- SLIDESHOW -->
           <div class="col-12 col-md-7 carousel text-center ">
             @if (count($announcement->images) > 1)
             <!-- SLIDESHOW -->
@@ -53,26 +53,51 @@
             @elseif (!count($announcement->images))
             <div><img src="https://via.placeholder.com/500/500" class="img-fluid"></div>
             @endif
+          </div> --}}
+
+          <div class="col-12 col-md-5 text-center revisor-wrapper">
+            @if(count($announcement->images))
+              @foreach($announcement->images as $image)
+                <div class="row">
+                  <div class="col-5">
+                    <img src="{{$image->getUrl(500, 500)}}" class="img-fluid">
+                  </div>
+                  <div class="col-7 text-start">
+                    Adult: {{$image->adult}} <br>
+                    Spoof: {{$image->spoof}} <br>
+                    Medical: {{$image->medical}} <br>
+                    Violence: {{$image->violence}} <br>
+                    Racy: {{$image->racy}} <br>
+                    @if ($image->labels)
+                      <hr>
+                      <ul>
+                      @foreach ($image->labels as $label)
+                          <li>{{$label}}</li>
+                      @endforeach
+                      </ul> 
+                    @endif
+                    
+                  </div>
+                </div>
+              @endforeach
+            @else
+              <img src="https://via.placeholder.com/500" class="img-fluid">
+            @endif
           </div>
       
           <!-- RIEPILOGO -->
-          <div class="col-12 col-md-5">
-              <div class="row h-100 flex-column justify-content-between">
+          <div class="col-12 col-md-7">
+              <div class="row h-100 flex-column">
                   <div class="col-12">
                       <a href="{{route('announcements.index', $announcement->category->id)}}">{{$announcement->category->name}}</a>
+                      <div>Autore: {{$announcement->user->name}}</div>
                       <div>{{$announcement->created_at->format('d/m/Y')}} alle {{$announcement->created_at->format('H:i')}}</div>
                       <h2>{{$announcement->title}}</h2>
                       <h4>€ {{number_format($announcement->price, 2, ',', '.');}}</h4>
                   </div>
-                  <div class="col-12">
-                      <div class="row align-items-center">
-                          <div class="col-3">
-                            <img src="{{$announcement->user->img ? Storage::url($announcement->user->img) : '/img/layout/avatar_male.jpeg'}}" class="rounded-circle img-fluid">
-                          </div>
-                          <div class="col-9">
-                              <h4>{{$announcement->user->name}}</h4>
-                          </div>
-                      </div>
+                  <div class="col-12 lead">
+                    <h3 class="mt-1">Descrizione</h3>
+                      {{$announcement->description}}
                   </div>
               </div>
 
@@ -80,10 +105,6 @@
           </div>
       </div>
       <div class="row">
-        <div class="col-12 lead mt-3 ">
-            <h3>Descrizione</h3>
-            {{$announcement->description}}
-        </div>
        <div class="col-7 mt-3 ">
         <div class="card-buttons d-flex justify-content-around">
           <form action="{{route('revisor.accepted', $announcement->id)}} " method="POST">

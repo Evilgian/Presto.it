@@ -11051,6 +11051,11 @@ header {
     font-size: 2.5em;
 }
 
+.revisor-wrapper{
+    height:60vh;
+    overflow-y:scroll;
+}
+
 
 
 /* NAVBAR DEFAULT */

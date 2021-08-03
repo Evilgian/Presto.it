@@ -9,7 +9,7 @@
                 <p>{{$announcement->created_at->format('d/m/Y')}}</p>
             </div>
             <div class="card-body d-flex flex-column justify-content-around align-items-center px-3 mt-0 pt-0">
-              <img src="{{count($announcement->images) ? ($announcement->images[0]->getUrl(500, 500)) : 'https://via.placeholder.com/150'
+              <img src="{{count($announcement->images) ? ($announcement->images[0]->getUrl(500, 500)) : 'https://via.placeholder.com/500'
                     }}" class="img-fluid">
                 <h5 class="h3 fw-bold text-main pt-3 text-center">{{$announcement->title}}</h5>
                 <p class="card-text">{{$announcement->getPreview()}}</p>

@@ -2,7 +2,7 @@
 		<div class="container">
 			<div class="row text-center text-xs-center text-sm-left text-md-left">
 				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h4>Informazioni aziendali</h4>
+					<h4>{{__('ui.businessInfo')}}</h4>
 					<ul class="list-unstyled quick-links">
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>Presto!</a></li>
 						<li><a href="{{route('user.apply')}}"><i class="fa fa-angle-double-right"></i>Lavora con noi</a></li>
@@ -10,7 +10,7 @@
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h4>Customer Service</h4>
+					<h4>{{__('ui.customerService')}}</h4>
 					<ul class="list-unstyled quick-links">
                         <li><a href="#"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
@@ -20,7 +20,7 @@
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
-					<h4>Policy</h4>
+					<h4>{{__('ui.policy')}}</h4>
 					<ul class="list-unstyled quick-links">
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>Policy and rules</a></li>
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>Partner Program</a></li>

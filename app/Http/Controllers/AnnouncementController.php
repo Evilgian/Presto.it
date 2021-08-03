@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\Watermark;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
@@ -153,6 +154,7 @@ class AnnouncementController extends Controller
             GoogleVisionSafeSearchImage::withChain([
                 new GoogleVisionLabelImage($i->id),
                 new GoogleVisionRemoveFaces($i->id),
+                new Watermark($i->id),
                 new ResizeImage(
                     $i->file,
                 150,

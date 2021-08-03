@@ -26,6 +26,8 @@
 .image-wrapper{
     position:relative;
     padding:3px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .removeImg{
@@ -33,8 +35,8 @@
     padding:0;
     padding-top:2px;
     position:absolute;
-    top:3px;
-    right:3px;
+    top:6px;
+    right:9px;
     background:#FFF8;
     color:var(--main-color);
     width:20px;

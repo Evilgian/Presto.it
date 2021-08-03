@@ -52,7 +52,7 @@
     <div id="annunci" class="container pt-5 mt-2">
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center text-main fw-bold">Ultimi annunci</h2>
+                <h2 class="text-center text-main fw-bold">{{__('ui.latest')}}</h2>
             </div>
             @foreach ($announcements as $announcement)
             <x-card :announcement="$announcement"/>

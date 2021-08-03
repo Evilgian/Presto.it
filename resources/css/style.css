@@ -81,7 +81,7 @@ body {
     background-color: #fff;
 }
 
-<<<<<<< HEAD
+
 .card:hover {
     /* transform: scale(1.05); */
     /* transition: 0.3s; */
@@ -93,17 +93,6 @@ header {
     position: relative;
     height: calc(100vh - 58px);
     background-image: url("/img/layout/header_bello.jpg") !important;
-=======
-/*! HEADER */
-header {
-    position: relative;
-    height: calc(100vh - 58px);
-    background-image: linear-gradient(90deg, #ff9e00, transparent, #ff9e00),
-        url("/img/layout/header_bg.jpeg") !important;
->>>>>>> ef28516773cad38f9528860359e041bea19743de
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 30px;
 }
 
 #header-txt {

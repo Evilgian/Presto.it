@@ -13,6 +13,7 @@
   }
 
   .bg-description{
-    background-color: ffffff;
+    background-color: #fffA;
+    backdrop-filter: blur(4px);
     
   }

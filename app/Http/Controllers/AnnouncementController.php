@@ -189,16 +189,37 @@ class AnnouncementController extends Controller
     //! UPDATE ======================================================
     public function update(Request $request, Announcement $announcement)
     {
-        foreach($request->input('remove') as $img_id){
-            //* Trovo l'immagine con l'id indicato
-            $img = AnnouncementImage::find($img_id);
-            //* Ne ricavo gli URL al file originale e ai file croppati
-            $filePath = $img->file; 
-            $cropped_Path = dirname($img->file).'/crop500x500_'.basename($img->file);  
-            $thumbnail_Path = dirname($img->file).'/crop150x150_'.basename($img->file);
-            //* Rimuovo fisicamente i file dal disco  
-            Storage::delete($filePath, $cropped_Path, $thumbnail_Path);
-            $img->delete();
+        if($request->file('img')){
+            $i = new AnnouncementImage;
+            $i->file = $request->file('img')->store("public/announcements/{$announcement->id}");
+            $this->dispatchNow(new ResizeImage(
+                $i->file,
+                500,
+                500,
+            ));
+
+            $this->dispatchNow(new ResizeImage(
+                $i->file,
+                150,
+                150,
+            ));
+
+            $i->announcement_id = $announcement->id;
+            $i->save();
+        }
+
+        if($request->input('remove')){            
+            foreach($request->input('remove') as $img_id){
+                //* Trovo l'immagine con l'id indicato
+                $img = AnnouncementImage::find($img_id);
+                //* Ne ricavo gli URL al file originale e ai file croppati
+                $filePath = $img->file; 
+                $cropped_Path = dirname($img->file).'/crop500x500_'.basename($img->file);  
+                $thumbnail_Path = dirname($img->file).'/crop150x150_'.basename($img->file);
+                //* Rimuovo fisicamente i file dal disco  
+                Storage::delete($filePath, $cropped_Path, $thumbnail_Path);
+                $img->delete();
+            }
         }
         $announcement->title = $request->input('title');
         $announcement->category_id = $request->input('category');

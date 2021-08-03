@@ -65,10 +65,10 @@
                 </li>
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('login')}}">Login</a>
+                    <a class="nav-link" href="{{route('login')}}">{{__('ui.login')}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('register')}}" tabindex="-1" aria-disabled="true">Sign Up</a>
+                    <a class="nav-link" href="{{route('register')}}" tabindex="-1" aria-disabled="true">{{__('ui.signUp')}}</a>
                 </li>
                 @endguest
                 @auth
@@ -81,8 +81,8 @@
                         @endif
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{route('user.show')}}">Profilo</a></li>
-                        <li><a class="dropdown-item" href="{{route('user.announcements')}}">I tuoi annunci</a></li>
+                        <li><a class="dropdown-item" href="{{route('user.show')}}">{{__('ui.user')}}</a></li>
+                        <li><a class="dropdown-item" href="{{route('user.announcements')}}">{{__('ui.yourAds')}}</a></li>
                         @if(Auth::user()->is_revisor)
                         <li id="dashboard"><a class="dropdown-item" href="{{route('revisor.dashboard')}}">Dashboard</a>
                             @if(\App\Models\Announcement::toBeRevisionedCount())

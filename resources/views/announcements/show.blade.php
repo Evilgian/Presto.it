@@ -13,16 +13,6 @@
     color:var(--main-color);
 
   }
-
-  .bg-description{
-    background-color: ffffff;
-    
-  }
-
-
-
-
-
 </style>
 
 
@@ -97,7 +87,7 @@
         <div class="row h-100 flex-column justify-content-between">
           <div class="col-12">
             <a href="{{route('announcements.index', $announcement->category->id)}}" class="txt-secondary text-detail">{{$announcement->category->name}}</a>
-            <div class="text-detail">{{$announcement->created_at->format('d/m/Y')}} alle {{$announcement->created_at->format('H:i')}}</div>
+            <div class="text-detail">{{$announcement->created_at->format('d/m/Y')}} {{__('ui.atTime')}} {{$announcement->created_at->format('H:i')}}</div>
             <h2 class="text-detail">{{$announcement->title}}</h2>
             <h4 class="text-detail">€ {{number_format($announcement->price, 2, ',', '.');}}</h4>
           </div>
@@ -118,17 +108,17 @@
     </div>
     <div class="row">
       <div class="col-12 lead mt-3 ">
-        <h3 class="text-detail">Descrizione</h3>
+        <h3 class="text-detail">{{__('ui.description')}}</h3>
         {{$announcement->description}}
       </div>
       @if($announcement->user->id == Auth::id() || (((Auth::user()) && Auth::user()->is_revisor)))
       
       @if($announcement->user->id == Auth::id())
-      <a class="col-auto d-inline" href="{{route('announcement.edit', $announcement)}}"><button class="btn btn-outline-main">Modifica</button></a>
+      <a class="col-auto d-inline" href="{{route('announcement.edit', $announcement)}}"><button class="btn btn-outline-main">{{__('ui.edit')}}</button></a>
       @endif
       
       {{-- OFF CANVAS (Delete) --}}
-      <button class="col-auto btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="fas fa-trash"></i> Elimina</button>
+      <button class="col-auto btn btn-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"><i class="fas fa-trash"></i> {{__('ui.delete')}}</button>
       
       <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
         <div class="offcanvas-header">
@@ -142,7 +132,7 @@
           @csrf
           @method('delete')
           <button type="submit" class="mb-5 btn btn-outline-danger">
-            <i class="fas fa-trash"></i> Elimina
+            <i class="fas fa-trash"></i> {{__('ui.delete')}}
           </button>
         </form>
       </div>

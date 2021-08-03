@@ -14,7 +14,7 @@
                 <h5 class="h3 fw-bold text-main pt-3 text-center">{{$announcement->title}}</h5>
                 <p class="card-text">{{$announcement->getPreview()}}</p>
                 <h4>€{{$announcement->price}}</h4>
-                <a href="{{route('announcement.show', $announcement)}}" class="btn btn-card-index">Dettagli</a>
+                <a href="{{route('announcement.show', $announcement)}}" class="btn btn-card-index">{{__('ui.details')}}</a>
             </div>
             <div class="card-footer bg-white text-end text-muted">
                 {{$announcement->user->name}}

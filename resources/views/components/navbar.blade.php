@@ -10,9 +10,12 @@
         </button>
        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                
-                <li class="nav-item">
+               
+
+
+                {{-- <li class="nav-item">
                     <form method="POST" action="{{route('locale', 'it')}}">
                         @csrf
                             <button type="submit" class="nav-link btn">
@@ -35,7 +38,7 @@
                                 <span class="flag-icon flag-icon-es"></span>
                             </button>
                     </form>
-                </li>
+                </li> --}}
 
                 <li id="navbar-search">
                     <div>
@@ -98,6 +101,40 @@
                     </ul>
                 </li>
                 @endauth
+                 {{-- MENU LINGUA --}}
+                 <li class="nav-item dropdown mx-1">
+                        
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <ul class="dropdown-menu" style="min-width:40px!important" aria-labelledby="navbarDropdown">
+                        <li class="nav-item">
+                            <form method="POST" action="{{route('locale', 'it')}}">
+                                @csrf
+                                    <button type="submit" class="nav-link btn">
+                                        <span class="flag-icon flag-icon-it"></span>
+                                    </button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <form method="POST" action="{{route('locale', 'en')}}">
+                                @csrf
+                                    <button type="submit" class="nav-link btn">
+                                        <span class="flag-icon flag-icon-gb"></span>
+                                    </button>
+                            </form>
+                        </li>
+                        <li class="nav-item">
+                            <form method="POST" action="{{route('locale', 'es')}}">
+                                @csrf
+                                    <button type="submit" class="nav-link btn">
+                                        <span class="flag-icon flag-icon-es"></span>
+                                    </button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                {{-- FINE MENU LINGUA --}}
             </ul>
         </div>
     </div>

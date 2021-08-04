@@ -48,11 +48,11 @@ class GoogleVisionSafeSearchImage implements ShouldQueue
             'SCONOSCIUTO', 'MOLTO_IMPROBABILE', 'IMPROBABILE', 'POSSIBILE', 'PROBABILE', 'MOLTO_PROBABILE'
         ];
 
-        $i->adult = $likelihoodName[$adult];
-        $i->medical = $likelihoodName[$medical];
-        $i->spoof = $likelihoodName[$spoof];
-        $i->violence = $likelihoodName[$violence];
-        $i->racy = $likelihoodName[$racy];
+        $i->adult = $adult;
+        $i->medical = $medical;
+        $i->spoof = $spoof;
+        $i->violence = $violence;
+        $i->racy = $racy;
 
         $i->save();
     }

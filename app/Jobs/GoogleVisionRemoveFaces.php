@@ -47,7 +47,7 @@ class GoogleVisionRemoveFaces implements ShouldQueue
             $vertices = $face->getBoundingPoly()->getVertices();
 
             $bounds = [];
-            
+
             foreach($vertices as $vertex) {
                 $bounds[] = [$vertex->getX(), $vertex->getY()];
 

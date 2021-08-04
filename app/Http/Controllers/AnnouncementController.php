@@ -198,20 +198,35 @@ class AnnouncementController extends Controller
         if($request->file('img')){
             $i = new AnnouncementImage;
             $i->file = $request->file('img')->store("public/announcements/{$announcement->id}");
-            $this->dispatchNow(new ResizeImage(
-                $i->file,
-                500,
-                500,
-            ));
+            // $this->dispatchNow(new ResizeImage(
+            //     $i->file,
+            //     500,
+            //     500,
+            // ));
 
-            $this->dispatchNow(new ResizeImage(
-                $i->file,
-                150,
-                150,
-            ));
+            // $this->dispatchNow(new ResizeImage(
+            //     $i->file,
+            //     150,
+            //     150,
+            // ));
 
             $i->announcement_id = $announcement->id;
             $i->save();
+            GoogleVisionSafeSearchImage::withChain([
+                new GoogleVisionLabelImage($i->id),
+                new GoogleVisionRemoveFaces($i->id),
+                new Watermark($i->id),
+                new ResizeImage(
+                    $i->file,
+                150,
+                150
+                ),
+                new ResizeImage(
+                    $i->file,
+                    500,
+                    500
+                )
+            ])->dispatch($i->id);
         }
 
         if($request->input('remove')){            
@@ -231,6 +246,7 @@ class AnnouncementController extends Controller
         $announcement->category_id = $request->input('category');
         $announcement->price = $request->input('price');
         $announcement->description = $request->input('description');
+        $announcement->is_accepted = NULL;
         $announcement->save();
 
         return redirect(route('announcement.show', compact('announcement')))->with('updated', 'Il tuo annuncio è stato modificato');

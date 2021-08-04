@@ -1,0 +1,46 @@
+#titolo-edit-user{
+    color:var(--secondary);
+    font-weight:bold;
+    
+}
+
+.btn-edit{
+    background-color: var(--secondary)!important;
+    color: var(--white) !important;
+    font-weight:bold !important;
+}
+
+.btn-edit:hover{
+    background-color: white !important;
+    border:3px solid var(--secondary)!important;
+    color: var(--secondary) !important;
+    font-weight:bold !important;
+
+
+}
+
+.edit-background{
+ background-image:url('/img/sign_up_background.jpg');
+background-repeat:no-repeat;
+background-position:center;
+background-size: cover;
+position:relative;
+
+
+}
+
+.box-edit-user{
+ border: 3px solid var(--secondary);
+ border-radius: 10%;
+}
+
+.edit-input{
+box-shadow: rgba(0, 75, 87, 0.25) 0px 14px 28px, rgba(0, 75, 87, 0.22) 0px 10px 10px;
+
+border:2px solid var(--secondary);
+border-radius:5px;
+color:var(--main-color) !important;
+font-weight:bold !important;
+background-color: transparent !important;
+
+}

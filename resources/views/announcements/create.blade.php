@@ -1,4 +1,3 @@
-
 <x-layout>
   <div class="container pt-3">
     <div class="row">
@@ -47,7 +46,7 @@
             </div>
             <div class="mb-3">
               <label for="description" class="form-label text-main">{{__('ui.description')}}</label>
-              <textarea id="description" placeholder="Descrizione annuncio" name="description" class="sign_up_input text-main form-control @error('description') is-invalid @enderror">{{old('description')}}</textarea>
+              <textarea id="description" placeholder="Descrizione annuncio" name="description" class="sign_up_input text-main form-control @error('description') is-invalid descrizione-focus @enderror">{{old('description')}}</textarea>
               @error('description')
               <div>{{$message}}</div>
               @enderror

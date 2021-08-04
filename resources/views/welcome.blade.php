@@ -1,19 +1,3 @@
-<style>
-    header {
-    position: relative;
-    height: calc(100vh - 58px);
-    background-image: url("/img/layout/header_bello.jpg") !important;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 30px;
-}
-
-
-
-</style>
-
-
-
 <x-layout>
     {{-- {{dd(Request::getPreferredLanguage())}} --}}
     @if(session('message'))

@@ -11058,16 +11058,19 @@ header {
 
 .revisor-wrapper{
     max-height:100%;
-    overflow-y:scroll;
+    overflow-y:auto;
 }
 
 .revisor-details{
     max-height:100%;
-    overflow-y:scroll;
+    overflow-y:auto;
 }
 
 .revisor-row{
     height:60vh;
+    -webkit-backdrop-filter:blur(6px);
+            backdrop-filter:blur(6px);
+    background-color: rgba(255, 255, 255, 0.509);
 }
 
 .moderation-danger{
@@ -11154,9 +11157,11 @@ header {
     .smalltext{
         font-size:.8em;
     }
-    .revisor-row{
-        height:70vh;
-    }
+    /* .revisor-row{
+        height:60vh;
+        backdrop-filter:blur(6px);
+        background-color: rgba(255, 255, 255, 0.509);
+    } */
 
     .accordion-button{
         padding:2px;
@@ -11331,6 +11336,7 @@ span.toBeRevisioned{
     width: 80%;
     height: 100%;
     float: right;
+    padding-top:4px!important;
     transition: opacity 0.6s ease, transform 0.3s ease;
   }
   .swiper-container.show {
@@ -11979,7 +11985,7 @@ border:3px solid var(--main-color) !important;
  color:var(--main-color) !important;
 }
 
-
+/* 
   ::-webkit-scrollbar{
     width:0.8em;
     height:0.8em;
@@ -12009,7 +12015,7 @@ border: none;
 ::-webkit-scrollbar-thumb:active{
     background-color: var(--main-color);
 border: none;
-}
+} */
 #dashboard-modera-bg{
     background-image:url('/img/sign_up_background.jpg');
     background-repeat:no-repeat;
@@ -12020,17 +12026,17 @@ border: none;
   }
 
   .bordo-box-modera{
-    border: 3px solid var(--main-color)!important;
+    /* border: 3px solid var(--main-color)!important; */
     border-radius:10px !important;
   }
-  .border-img{
+  /* .border-img{
     border: 2px solid var(--main-color)!important;
 
-  }
+  } */
 
   .accordion-body{
     background-color: var(-white);
-    border: 2px solid var(--main-color);
+    /* border: 2px solid var(--main-color); */
     -webkit-backdrop-filter:blur(5px);
             backdrop-filter:blur(5px);
     
@@ -12065,7 +12071,7 @@ border: none;
   }
 
   .accordion{
-    border:3px solid var(--main-color)!important;
+    /* border:3px solid var(--main-color)!important; */
     border-radius:5px;
   }
   .accordion:active{
@@ -12078,7 +12084,7 @@ border: none;
    
         .swiper-container {
             width: 80%;
-            height: 100px !important;
+            /* height: 100px !important; */
         }
         
         .trash-wrapper>*{
@@ -12117,13 +12123,18 @@ border: none;
           /* dashboard */
 
 
+        .swiper-pagination-progressbar-fill{
+            background-color:var(--secondary)!important;
+            color:var(--secondary);
+        }
+
         #dashboard-view{
             background-image: url('/img/sign_up_background.jpg');
             background-size: cover;
         }
 
         .h-slider{
-            max-height:450px;
+            max-height:500px;
         }
 
         .h-slider-bin{

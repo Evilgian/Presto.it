@@ -171,16 +171,18 @@ header {
 
 .revisor-wrapper{
     max-height:100%;
-    overflow-y:scroll;
+    overflow-y:auto;
 }
 
 .revisor-details{
     max-height:100%;
-    overflow-y:scroll;
+    overflow-y:auto;
 }
 
 .revisor-row{
     height:60vh;
+    backdrop-filter:blur(6px);
+    background-color: rgba(255, 255, 255, 0.509);
 }
 
 .moderation-danger{
@@ -267,9 +269,11 @@ header {
     .smalltext{
         font-size:.8em;
     }
-    .revisor-row{
-        height:70vh;
-    }
+    /* .revisor-row{
+        height:60vh;
+        backdrop-filter:blur(6px);
+        background-color: rgba(255, 255, 255, 0.509);
+    } */
 
     .accordion-button{
         padding:2px;

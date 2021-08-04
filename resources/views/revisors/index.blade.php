@@ -69,7 +69,7 @@
               
               @if ($image->labels)
               <hr class="mb-3 text-main">
-              <div class="text-main testo-labels mb-3" style="font-size:.8em">
+              <div class="text-main testo-labels text-muted mb-3" style="font-size:.8em">
                 @foreach ($image->labels as $label)
                 {{$label}} | 
                 @endforeach
@@ -88,14 +88,14 @@
         <div class="col-12 revisor-details col-md-7">
           <div class="row h-100 w-100 flex-column">
             <div class="col-12">
-              <a class="text-main nome-categoria-dashboard" href="{{route('announcements.index', $announcement->category->id)}}">{{$announcement->category->name}}</a>
-              <div class="text-main smalltext">Autore: {{$announcement->user->name}}</div>
-              <div class="text-main smalltext">{{$announcement->created_at->format('d/m/Y')}} alle {{$announcement->created_at->format('H:i')}}</div>
-              <h2 class="text-main mt-3">{{$announcement->title}}</h2>
-              <h2 class="text-end text-main">€ {{number_format($announcement->price, 2, ',', '.');}}</h2>
+              <a class="txt-secondary lead" href="{{route('announcements.index', $announcement->category->id)}}">{{$announcement->category->name}}</a>
+              <div class="text-muted smalltext">Autore: {{$announcement->user->name}}</div>
+              <div class="text-muted smalltext">{{$announcement->created_at->format('d/m/Y')}} alle {{$announcement->created_at->format('H:i')}}</div>
+              <h2 class="text-main mt-2 mb-0">{{$announcement->title}}</h2>
+              <h2 class="text-end txt-secondary fw-bold mt-0">€ {{number_format($announcement->price, 2, ',', '.');}}</h2>
             
               <hr width="75%" class="my-0">
-              <div class="col-12 text-main">
+              <div class="col-12">
                 <h4 class="mt-1 text-main">Descrizione</h4>
                 {{$announcement->description}}
               </div>
@@ -151,7 +151,8 @@
           </div>
         </div> --}}
         @else 
-        <h2>Nessun annuncio da revisionare</h2>
+        <h2 class="text-center h1">Nessun annuncio da revisionare</h2>
+        <h3 class="text-center">Torna alla <a class="txt-secondary text-center" href="{{route('revisor.dashboard')}}">Dashboard</a></h3>
         
         @endif 
         

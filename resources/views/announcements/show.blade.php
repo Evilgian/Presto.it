@@ -17,7 +17,7 @@
 
 
 <x-layout>
-  <div class="container pt-3" id="container-dettaglio">
+  <div class="container py-3" id="container-dettaglio">
     @if($announcement->is_accepted === NULL)
     <div class="alert alert-warning">Il tuo annuncio è in corso di moderazione </div>
     @endif
@@ -107,9 +107,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 lead mt-3 ">
+      <div class="col-12 lead my-3 ">
         <h3 class="text-detail">{{__('ui.description')}}</h3>
-        {{$announcement->description}}
+        @php
+         echo nl2br($announcement->description)
+          
+        @endphp
       </div>
       @if($announcement->user->id == Auth::id() || (((Auth::user()) && Auth::user()->is_revisor)))
       

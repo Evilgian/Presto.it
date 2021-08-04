@@ -13,7 +13,7 @@
             width:500px;
             position:relative;
             max-height:80vh;
-            overflow-y: scroll;
+            overflow-y: auto;
         }
         .admin-users-wrapper>.row{
             height:100px;
@@ -57,6 +57,9 @@
         }
         .wrapper a:hover{
             color:var(--secondary)!important;
+        }
+        .user-row:hover{
+            background-color:rgba(210, 223, 210, 0.618);
         }
         
         @media screen and (max-width: 991px){
@@ -111,7 +114,7 @@
                 @foreach($users as $user)
                 @if (!$user->is_revisor)
                 <a href="{{route('admin.userprofile', $user->id)}}">
-                    <div class="row">
+                    <div class="row user-row">
                         <div class="col-12 border">
                             <img src=" {{$user->img ? Storage::url($user->img) : '/img/layout/avatar_male.jpeg'}} " class="rounded-circle" ></span>
                             <span>

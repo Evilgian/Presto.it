@@ -58,7 +58,7 @@ class GoogleVisionRemoveFaces implements ShouldQueue
 
             $image = Image::load($srcPath);
 
-            $image->watermark(base_path('resources/img/pixelate.png'))
+            $image->watermark(base_path('resources/img/skin-pixelate.png'))
                 ->watermarkOpacity(80)
                   ->watermarkPosition('top-left')
                   ->watermarkPadding($bounds[0][0], $bounds[0][1])

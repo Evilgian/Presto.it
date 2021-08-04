@@ -3,7 +3,7 @@
    
         .swiper-container {
             width: 80%;
-            height: 100px !important;
+            /* height: 100px !important; */
         }
         
         .trash-wrapper>*{
@@ -50,13 +50,18 @@
           /* dashboard */
 
 
+        .swiper-pagination-progressbar-fill{
+            background-color:var(--secondary)!important;
+            color:var(--secondary);
+        }
+
         #dashboard-view{
             background-image: url('/img/sign_up_background.jpg');
             background-size: cover;
         }
 
         .h-slider{
-            max-height:450px;
+            max-height:500px;
         }
 
         .h-slider-bin{

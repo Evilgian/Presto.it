@@ -1,4 +1,4 @@
-
+/* 
   ::-webkit-scrollbar{
     width:0.8em;
     height:0.8em;
@@ -28,4 +28,4 @@ border: none;
 ::-webkit-scrollbar-thumb:active{
     background-color: var(--main-color);
 border: none;
-}
+} */

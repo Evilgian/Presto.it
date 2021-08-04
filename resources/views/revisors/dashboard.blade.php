@@ -27,8 +27,8 @@
                                     }}
                                     " class="h-50 img-fluid" alt="...">
                                     <div class="card-body d-flex flex-column justify-content-around align-items-center">
-                                        <h3 class="card-title text-main fw-bold">{{$announcement->title}}</h3>
-                                        <p class="card-text text-main fw-bold">{{$announcement->getPreview()}}</p>
+                                        <h3 class="card-title fs-4 text-main fw-bold">{{$announcement->getTitle()}}</h3>
+                                        <p class="card-text fs-6">{{$announcement->getPreview()}}</p>
                                         <a href="{{route('revisor.panel', $announcement)}}"
                                         class="btn btn-outline-main w-50 text-main fw-bold">Modera</a>
                                     </div>

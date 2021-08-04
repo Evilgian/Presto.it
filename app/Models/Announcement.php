@@ -60,16 +60,19 @@ class Announcement extends Model
         }
 
 
-        public function preview($sample){
+        public function preview($sample, $length=50){
             $sample= strip_tags($sample);
-            $sample=substr($sample, 0, 50);
+            $sample=substr($sample, 0, $length);
             $sample=$sample."...";
     
             return $sample;
         }
     
         public function getPreview(){
-            return $this->preview($this->description);
+            return $this->preview($this->description, 50);
+        }
+        public function getTitle(){
+            return $this->preview($this->title, 20);
         }
 
 

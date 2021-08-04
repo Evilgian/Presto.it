@@ -11,6 +11,10 @@
 @import 'card.css';
 @import 'create_ann.css';
 @import 'show.css';
+@import 'index_ann.css';
+@import 'user_show.css';
+@import 'edit_ann.css';
+@import 'user_apply.css';
 
 
 @import'~dropzone/dist/basic';

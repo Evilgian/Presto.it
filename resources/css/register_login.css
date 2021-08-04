@@ -25,8 +25,14 @@
     color:var(--main-color);
     background-color: transparent !important;
 
-
   }
+
+
+
+  
+
+
+
   .col_form{
     position:relative;
    
@@ -51,6 +57,14 @@
   
 
   }
+
+  #name:focus, #exampleInputPassword1:focus, #exampleInputEmail1:focus{
+    color:var(--main-color);
+    font-weight:bold;
+
+  }
+
+  
 
   
 
@@ -86,5 +100,17 @@
   #login_container a{
     color:var(--secondary) !important;
   }
+
+  #exampleInputEmail1, #exampleInputPassword1{
+    font-weight:bold !important;
+    background-color:transparent !important;
+    color:var(--main-color);
+}
+
+
+  
+
+
+  
 
 

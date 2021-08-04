@@ -10976,10 +10976,15 @@ body {
 }
 
 /* ! HEADER */
+
 header {
     position: relative;
     height: calc(100vh - 58px);
     background-image: url("/img/layout/header_bello.jpg") !important;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 30px;
+    box-shadow:0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
 #header-txt {
@@ -11585,8 +11590,14 @@ section .section-title {
     color:var(--main-color);
     background-color: transparent !important;
 
-
   }
+
+
+
+  
+
+
+
   .col_form{
     position:relative;
    
@@ -11611,6 +11622,14 @@ section .section-title {
   
 
   }
+
+  #name:focus, #exampleInputPassword1:focus, #exampleInputEmail1:focus{
+    color:var(--main-color);
+    font-weight:bold;
+
+  }
+
+  
 
   
 
@@ -11646,6 +11665,18 @@ section .section-title {
   #login_container a{
     color:var(--secondary) !important;
   }
+
+  #exampleInputEmail1, #exampleInputPassword1{
+    font-weight:bold !important;
+    background-color:transparent !important;
+    color:var(--main-color);
+}
+
+
+  
+
+
+  
 
 
 
@@ -11773,6 +11804,27 @@ section .section-title {
    
   }
 
+ 
+  #description:focus{
+    color:var(--main-color);
+  }
+
+  #title:focus{
+    color:var(--main-color) ;
+    font-weight: bold;
+    
+  }
+
+  #price:focus{
+    color:var(--main-color) ;
+    font-weight: bold;
+
+    
+  }
+
+
+
+
   .dz-preview{
     background-color: transparent !important;
   }
@@ -11810,6 +11862,123 @@ section .section-title {
             backdrop-filter: blur(4px);
     
   }
+.background-tutti-gli-annunci{
+    background-image:url('/img/sign_up_background.jpg');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: contain;
+    position:relative;    
+  }
+#user-head .box-utente{
+    border:3px solid var(--secondary) !important;
+    border-radius:10% !important;
+       
+}
+
+#user-head{
+    background-image:url('/img/sign_up_background.jpg');
+background-repeat:no-repeat;
+background-position:center;
+background-size: contain;
+position:relative;  
+    
+}
+
+#user-head .btn-modify{
+    background-color: var(--secondary);
+    border-radius:10px;
+}
+#titolo-edit-user{
+    color:var(--secondary);
+    font-weight:bold;
+    
+}
+
+.btn-edit{
+    background-color: var(--secondary)!important;
+    color: var(--white) !important;
+    font-weight:bold !important;
+}
+
+.btn-edit:hover{
+    background-color: white !important;
+    border:3px solid var(--secondary)!important;
+    color: var(--secondary) !important;
+    font-weight:bold !important;
+
+
+}
+
+.edit-background{
+ background-image:url('/img/sign_up_background.jpg');
+background-repeat:no-repeat;
+background-position:center;
+background-size: cover;
+position:relative;
+
+
+}
+
+.box-edit-user{
+ border: 3px solid var(--secondary);
+ border-radius: 10%;
+}
+
+.edit-input{
+box-shadow: rgba(0, 75, 87, 0.25) 0px 14px 28px, rgba(0, 75, 87, 0.22) 0px 10px 10px;
+
+border:2px solid var(--secondary);
+border-radius:5px;
+color:var(--main-color) !important;
+font-weight:bold !important;
+background-color: transparent !important;
+
+}
+#apply-txt{
+    background-image:url('/img/sign_up_background.jpg');
+background-repeat:no-repeat;
+background-position:center;
+background-size: cover;
+position:relative;
+
+}
+
+#apply-txt h1{
+    color:var(--main-color) !important;
+    font-weight:bold;
+
+}
+
+.apply-input{
+box-shadow: rgba(0, 75, 87, 0.25) 0px 14px 28px, rgba(0, 75, 87, 0.22) 0px 10px 10px;
+border:3px solid var(--main-color) !important;
+border-bottom: 10px var(--main-color);
+color:var(--main-color) !important;
+background-color: transparent !important;
+border-radius:5px !important;
+}
+
+.apply-input:focus{
+   color:var(--main-color) !important;
+   font-weight:bold !important;
+}
+
+#floatingName, #floatingMail, #floatingTextarea{
+color:var(--main-color) !important;
+   font-weight:bold !important;
+
+
+}
+
+.border-btn-candidate{
+border:3px solid var(--main-color) !important;
+
+
+}
+.apply-subtitle{
+ color:var(--main-color) !important;
+}
+
 .dropzone, .dropzone * {
   box-sizing: border-box;
 }

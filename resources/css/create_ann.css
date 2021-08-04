@@ -23,6 +23,27 @@
    
   }
 
+ 
+  #description:focus{
+    color:var(--main-color);
+  }
+
+  #title:focus{
+    color:var(--main-color) ;
+    font-weight: bold;
+    
+  }
+
+  #price:focus{
+    color:var(--main-color) ;
+    font-weight: bold;
+
+    
+  }
+
+
+
+
   .dz-preview{
     background-color: transparent !important;
   }

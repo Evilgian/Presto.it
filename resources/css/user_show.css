@@ -1,0 +1,19 @@
+#user-head .box-utente{
+    border:3px solid var(--secondary) !important;
+    border-radius:10% !important;
+       
+}
+
+#user-head{
+    background-image:url('/img/sign_up_background.jpg');
+background-repeat:no-repeat;
+background-position:center;
+background-size: contain;
+position:relative;  
+    
+}
+
+#user-head .btn-modify{
+    background-color: var(--secondary);
+    border-radius:10px;
+}

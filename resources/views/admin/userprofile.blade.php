@@ -83,8 +83,13 @@
                         <p><strong class="footnote">Annunci pubblicati:</strong><br>{{App\Models\Announcement::where('user_id', $user->id)->count()}}</p>
                         
                         @if ($user->is_revisor)
-                        <p><strong class="footnote">Annunci moderati:</strong><br>{{App\Models\Moderation::where('revisor_id', $user->id)->where('status',1)->count()+
-                            App\Models\Moderation::where('revisor_id', $user->id)->where('status',0)->count()}}</p>
+                        @php
+                            $approved=App\Models\Moderation::where('revisor_id', $user->id)->where('status',1)->count();
+                            $rejected=App\Models\Moderation::where('revisor_id', $user->id)->where('status',0)->count();
+
+                        @endphp
+                        <p><strong class="footnote">Annunci moderati:</strong><br>{{$approved + $rejected}} 
+                            (<span class="text-success">{{$approved}} Approvati</span> / <span class="text-danger">{{$rejected}} Rifiutati</span>)</p>
                         @endif
                     </div>
                     {{-- STAFF --}}

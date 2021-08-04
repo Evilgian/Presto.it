@@ -26,10 +26,10 @@ class AnnouncementController extends Controller
     //! INDEX by USER ======================================================
     public function indexByUser($user=NULL){
         if($user){
-            $announcements = Announcement::where('user_id', $user)->orderBy('id', 'DESC')->get();
+            $announcements = Announcement::where('user_id', $user)->orderBy('id', 'DESC')->paginate(2);
         }
         else {
-            $announcements = Announcement::where('user_id', Auth::id())->orderBy('id', 'DESC')->get();
+            $announcements = Announcement::where('user_id', Auth::id())->orderBy('id', 'DESC')->paginate(2);
             $user = Auth::id();
         }
         return view('announcements.index', compact('announcements', 'user'));
@@ -39,9 +39,9 @@ class AnnouncementController extends Controller
     public function index($category=NULL)
     {
         if($category){
-            $announcements = Announcement::where('is_accepted', true)->where('category_id', $category)->orderBy('id', 'DESC')->get();
+            $announcements = Announcement::where('is_accepted', true)->where('category_id', $category)->orderBy('id', 'DESC')->paginate(3);
         }else{
-            $announcements = Announcement::where('is_accepted', true)->orderBy('id', 'DESC')->get();
+            $announcements = Announcement::where('is_accepted', true)->orderBy('id', 'DESC')->paginate(2);
         }
         return view('announcements.index', compact('announcements', 'category'));
     }

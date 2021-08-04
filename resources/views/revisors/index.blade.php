@@ -63,18 +63,43 @@
                     <img src="{{$image->getUrl(500, 500)}}" class="img-fluid">
                   </div>
                   <div class="col-7 text-start">
-                    Adult: {{$image->adult}} <br>
-                    Spoof: {{$image->spoof}} <br>
-                    Medical: {{$image->medical}} <br>
-                    Violence: {{$image->violence}} <br>
-                    Racy: {{$image->racy}} <br>
+{{-- ACCORDION --}}
+                    <div class="accordion" id="accordion{{$loop->index}}">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading{{$loop->index}}">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$loop->index}}" aria-expanded="true" aria-controls="collapse{{$loop->index}}">
+                            Accordion Item #1
+                          </button>
+                        </h2>
+                        <div id="collapse{{$loop->index}}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordion{{$loop->index}}">
+                          <div class="accordion-body">
+                            Adult: {{$image->adult}} <br>
+                            Spoof: {{$image->spoof}} <br>
+                            Medical: {{$image->medical}} <br>
+                            Violence: {{$image->violence}} <br>
+                            Racy: {{$image->racy}} <br>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+{{-- END ACCORDION --}}
+
+
+                    
+
+
+
+
+
+
+
                     @if ($image->labels)
-                      <hr>
-                      <ul>
+                      <hr class="mb-0">
+                      <div class="text-muted mb-3" style="font-size:.8em">
                       @foreach ($image->labels as $label)
-                          <li>{{$label}}</li>
+                         {{$label}} | 
                       @endforeach
-                      </ul> 
+                      </div> 
                     @endif
                     
                   </div>
@@ -116,7 +141,7 @@
           <form action="{{route('revisor.rejected', $announcement->id)}} " method="POST">
             @csrf
             <button type="submit" class="btn btn-outline-danger">
-              <i class="fas fa-trash me-2"></i>Rifiuta
+              <i class="far fa-times-circle me-2"></i>Rifiuta
             </button>
             {{-- <button type='submit' class="btn btn-main">Rifiuta</button> --}}
           </form>

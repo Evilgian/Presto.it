@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Jobs\Watermark;
+use App\Models\Category;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
@@ -29,8 +30,9 @@ class AnnouncementController extends Controller
         }
         else {
             $announcements = Announcement::where('user_id', Auth::id())->orderBy('id', 'DESC')->get();
+            $user = Auth::id();
         }
-        return view('announcements.index', compact('announcements'));
+        return view('announcements.index', compact('announcements', 'user'));
     }
 
     //! INDEX ======================================================
@@ -41,7 +43,7 @@ class AnnouncementController extends Controller
         }else{
             $announcements = Announcement::where('is_accepted', true)->orderBy('id', 'DESC')->get();
         }
-        return view('announcements.index', compact('announcements'));
+        return view('announcements.index', compact('announcements', 'category'));
     }
 
     //! CREATE ======================================================

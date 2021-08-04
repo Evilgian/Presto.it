@@ -92,7 +92,10 @@
                             <span class="toBeRevisioned badge badge-pill badge-warning">{{\App\Models\Announcement::toBeRevisionedCount()}}</span>
                             @endif
                         </li>
-                        
+                        @endif
+                        @if(Auth::id()==1)
+                        <li id="admin"><a class="dropdown-item" href="{{route('admin.dashboard')}}">Amministrazione</a>
+                        </li>
                         @endif
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Logout<i class="fas fa-sign-out-alt ms-4"></i></a>

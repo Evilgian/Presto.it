@@ -22,8 +22,10 @@ class RevisorController extends Controller
         return view('revisors.dashboard', compact('pending', 'rejected'));
     }
 
-    public function index(Announcement $announcement) {
-        // $announcement= Announcement::where('is_accepted', null)->first();
+    public function index(Announcement $announcement = NULL) {
+        if(!$announcement){
+            $announcement= Announcement::where('is_accepted', null)->first();
+        }
         return view('revisors.index', compact('announcement'));
     }
 
@@ -32,7 +34,7 @@ class RevisorController extends Controller
         $announcement->is_accepted = $value;
         $announcement->save();
         
-        return redirect(route('revisor.dashboard'));
+        return redirect(route('revisor.panel'));
     }
 
     public function accept($id){

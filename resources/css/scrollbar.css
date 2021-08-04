@@ -1,0 +1,31 @@
+
+  ::-webkit-scrollbar{
+    width:0.8em;
+    height:0.8em;
+background: var(--secondary);
+margin-right: 10px;
+}
+::-webkit-scrollbar:hover{
+    background-color:var(--secondary) ;
+border: none;
+}
+::-webkit-resizer{
+    -webkit-border-radius:4px;
+    background-color:#ccc;
+border: none;
+}
+::-webkit-scrollbar-thumb{
+    min-height:0.8em;
+    min-width:0.8em;
+    -webkit-border-radius:4px;
+    background-color:var(--main-color);
+border: none;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--main-color);
+border: none;
+}
+::-webkit-scrollbar-thumb:active{
+    background-color: var(--main-color);
+border: none;
+}

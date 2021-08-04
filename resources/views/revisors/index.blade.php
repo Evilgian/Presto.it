@@ -1,20 +1,21 @@
+
 <x-layout>
   
-  <div class="container pt-3 min-vh-100">
+  <div class="container pt-3 min-vh-100" id="dashboard-modera-bg">
     <div class="row justify-content-center">
       <div class="col-12">
         <h2 class="my-5 fw-bold dashboard-header text-main text-center">Annuncio da approvare</h2>
       </div>
       @if ($announcement)
       
-      <div class="row revisor-row shadow border p-3">
+      <div class="row revisor-row shadow  p-3 bordo-box-modera">
         
         <div class="col-12 col-md-5 text-center revisor-wrapper">
           @if(count($announcement->images))
           @foreach($announcement->images as $image)
           <div class="row mb-1">
             <div class="col-5">
-              <img src="{{$image->getUrl(500, 500)}}" class="img-fluid">
+              <img src="{{$image->getUrl(500, 500)}}" class="img-fluid border-img">
             </div>
             <div class="col-7 text-start">
               {{-- ACCORDION --}}
@@ -67,8 +68,8 @@
               {{-- END ACCORDION --}}
               
               @if ($image->labels)
-              <hr class="mb-0">
-              <div class="text-muted mb-3" style="font-size:.8em">
+              <hr class="mb-3 text-main">
+              <div class="text-main testo-labels mb-3" style="font-size:.8em">
                 @foreach ($image->labels as $label)
                 {{$label}} | 
                 @endforeach
@@ -87,15 +88,15 @@
         <div class="col-12 revisor-details col-md-7">
           <div class="row h-100 w-100 flex-column">
             <div class="col-12">
-              <a class="smalltext" href="{{route('announcements.index', $announcement->category->id)}}">{{$announcement->category->name}}</a>
-              <div class="text-muted smalltext">Autore: {{$announcement->user->name}}</div>
-              <div class="text-muted smalltext">{{$announcement->created_at->format('d/m/Y')}} alle {{$announcement->created_at->format('H:i')}}</div>
-              <h2>{{$announcement->title}}</h2>
-              <h2 class="text-end">€ {{number_format($announcement->price, 2, ',', '.');}}</h2>
+              <a class="text-main nome-categoria-dashboard" href="{{route('announcements.index', $announcement->category->id)}}">{{$announcement->category->name}}</a>
+              <div class="text-main smalltext">Autore: {{$announcement->user->name}}</div>
+              <div class="text-main smalltext">{{$announcement->created_at->format('d/m/Y')}} alle {{$announcement->created_at->format('H:i')}}</div>
+              <h2 class="text-main mt-3">{{$announcement->title}}</h2>
+              <h2 class="text-end text-main">€ {{number_format($announcement->price, 2, ',', '.');}}</h2>
             
               <hr width="75%" class="my-0">
-              <div class="col-12">
-                <h4 class="mt-1">Descrizione</h4>
+              <div class="col-12 text-main">
+                <h4 class="mt-1 text-main">Descrizione</h4>
                 {{$announcement->description}}
               </div>
             </div>
@@ -113,14 +114,14 @@
           <div class="card-buttons d-flex justify-content-around">
             <form action="{{route('revisor.accepted', $announcement->id)}} " method="POST">
               @csrf
-              <button  class="btn btn-outline-main" type='submit'>
-                <i class="fas fa-check me-1"></i>Accetta</button>
+              <button  class="btn btn-outline-main btn-accetta" type='submit'>
+                <i class="fas fa-check me-1 fw-bold"></i>Accetta</button>
               </form>
               
               <form action="{{route('revisor.rejected', $announcement->id)}} " method="POST">
                 @csrf
-                <button type="submit" class="btn btn-outline-danger">
-                  <i class="far fa-times-circle me-2"></i>Rifiuta
+                <button type="submit" class="btn btn-outline-danger btn-rifiuta">
+                  <i class="far fa-times-circle me-2 fw-bold"></i>Rifiuta
                 </button>
               </form>
             </div>

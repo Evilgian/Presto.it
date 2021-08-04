@@ -1,0 +1,61 @@
+#dashboard-modera-bg{
+    background-image:url('/img/sign_up_background.jpg');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: cover;
+    position:relative;
+    
+  }
+
+  .bordo-box-modera{
+    border: 3px solid var(--main-color)!important;
+    border-radius:10px !important;
+  }
+  .border-img{
+    border: 2px solid var(--main-color)!important;
+
+  }
+
+  .accordion-body{
+    background-color: var(-white);
+    border: 2px solid var(--main-color);
+    backdrop-filter:blur(5px);
+    
+    font-weight: bold;
+  }
+
+  .testo-labels{
+    font-weight:bold !important;
+  }
+
+  .nome-categoria-dashboard{
+    font-size:30px;
+    text-decoration:none;
+  }
+
+  .nome-categoria-dashboard:hover{
+    color:var(--main-color);
+  }
+
+  .btn-accetta{
+   padding: 10px 25px !important;
+   border:3px solid var(--main-color)!important;
+   font-weight:bold !important;
+
+  }
+
+  .btn-rifiuta{
+    padding: 10px 15px !important;
+   border: 3px solid #dc3545 !important;
+   font-weight:bold !important;
+
+  }
+
+  .accordion{
+    border:3px solid var(--main-color)!important;
+    border-radius:5px;
+  }
+  .accordion:active{
+    text-decoration:none;
+  }
+

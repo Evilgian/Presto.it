@@ -15,6 +15,8 @@
 @import 'user_show.css';
 @import 'edit_ann.css';
 @import 'user_apply.css';
+@import 'scrollbar.css';
+@import 'revisors_index.css';
 
 
 @import'~dropzone/dist/basic';

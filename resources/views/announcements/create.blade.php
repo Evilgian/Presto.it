@@ -18,7 +18,7 @@
     @endif
 
 
-  <div class="container-fluid create_form_bg" id="container_create">
+  <div class="container-fluid create_form_bg pb-4" id="container_create">
       
     <div class="row my-5 mt-3">
       <div class="col-12 col-md-4 offset-md-4 col_form mb-5">

@@ -53,7 +53,7 @@
     </style>
 
     
-    <div class="container-fluid" id="dashboard-view">
+    <div class="container-fluid pb-5" id="dashboard-view">
         <div class="container pt-3">
             <div class="row">
                 <div class="col-12">
@@ -104,7 +104,7 @@
                 <div class="swiper-container mySwiperRejected">
                     <div class="swiper-wrapper trash-wrapper">
                         @foreach ($rejected as $announcement)
-                        <div class="swiper-slide m-0 ">
+                        <div class="swiper-slide mx-1 p-0 ">
                             <div class="swiper-slide">
                                 <div class="card h-100 w-100">
                                     <img src="

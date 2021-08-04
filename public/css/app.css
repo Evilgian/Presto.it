@@ -11052,9 +11052,118 @@ header {
 }
 
 .revisor-wrapper{
-    height:60vh;
+    max-height:100%;
     overflow-y:scroll;
 }
+
+.revisor-details{
+    max-height:100%;
+    overflow-y:scroll;
+}
+
+.revisor-row{
+    height:60vh;
+}
+
+.moderation-danger{
+    background-color:rgb(187, 10, 10);
+}
+.moderation-danger.accordion-button:not(.collapsed){
+    background-color:rgb(242, 55, 55);
+}
+.moderation-danger.accordion-button:focus{
+    border-color:rgb(221, 147, 147)!important;
+    box-shadow:0 0 0 0.25rem rgba(172, 1, 1, 0.44);
+}
+
+.moderation-warning{
+    background-color:rgb(221, 191, 69);
+}
+.moderation-warning.accordion-button:not(.collapsed){
+    background-color:rgb(242, 211, 87);
+}
+.moderation-warning.accordion-button:focus{
+    border-color:rgb(223, 201, 111)!important;
+    box-shadow:0 0 0 0.25rem rgba(221, 206, 147, 0.44);
+}
+
+.safe-search-1::before{
+    font-family:"Font Awesome 5 Free";
+    font-weight:900;
+    content:'\f058';
+    color:rgb(0, 182, 58);
+    width:20px;
+    height:20px; 
+    margin-right:4px;
+}
+.accordion-body{
+    font-size:.8em!important;
+}
+.safe-search-2::before, .safe-search-3::before{
+    font-family:"Font Awesome 5 Free";
+    font-weight:900;
+    content:'\f071';
+    color:rgb(221, 191, 69);
+    width:20px;
+    height:20px; 
+    margin-right:4px;
+}
+
+.safe-search-4::before, .safe-search-5::before{
+    font-family:"Font Awesome 5 Free";
+    font-weight:900;
+    content:'\f410';
+    color:rgb(187, 10, 10);
+    width:20px;
+    height:20px; 
+    margin-right:4px;
+}
+
+@media screen and (max-width: 425px){
+    #header-txt > h1 {
+        font-size: 19vw;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .dashboard-header{
+        margin-top: 0px!important;
+        margin-bottom: 6px!important;
+    }
+    .revisor-wrapper{
+        max-height:35%;
+    }
+    .revisor-details{
+        max-height:65%;
+    }
+
+    .revisor-details h2{
+        font-size:1.2em;
+        font-weight: bold;
+    }
+    .revisor-details h4{
+        font-size:1em;
+        font-weight:bold;
+    }
+
+    .smalltext{
+        font-size:.8em;
+    }
+    .revisor-row{
+        height:70vh;
+    }
+
+    .accordion-button{
+        padding:2px;
+        margin:0;
+        font-size:.5em;
+    }
+
+    .accordion-button::after{
+        transform:scale(.7);
+    }
+}
+
 
 
 

@@ -81,6 +81,11 @@
                         <p><strong class="footnote">ruolo:</strong><br>{{($user->id == 1) ? 'Admin' : ($user->is_revisor ? 'Staff (Revisore)' : 'Utente')}}</p>
                         <p><strong class="footnote">Iscritto dal:</strong><br>{{$user->created_at->format('d/m/Y')}}</p>
                         <p><strong class="footnote">Annunci pubblicati:</strong><br>{{App\Models\Announcement::where('user_id', $user->id)->count()}}</p>
+                        
+                        @if ($user->is_revisor)
+                        <p><strong class="footnote">Annunci moderati:</strong><br>{{App\Models\Moderation::where('revisor_id', $user->id)->where('status',1)->count()+
+                            App\Models\Moderation::where('revisor_id', $user->id)->where('status',0)->count()}}</p>
+                        @endif
                     </div>
                     {{-- STAFF --}}
                     <hr class="w-75 mx-auto mt-5 d-lg-none">

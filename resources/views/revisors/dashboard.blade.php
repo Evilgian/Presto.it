@@ -115,6 +115,10 @@
                                     <div class="card-body d-flex flex-column justify-content-around align-items-center">
                                         <h5 class="card-title">{{$announcement->title}}</h5>
                                         <a href="{{route('announcement.show', $announcement)}}" class="btn btn-outline-main w-50">Vedi</a>
+                                        <form action="{{route('revisor.undo', ['id'=>$announcement->id, 'path'=>'dash'])}}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-warning">Ripristina</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

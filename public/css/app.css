@@ -11086,6 +11086,9 @@ header {
     border-color:rgb(223, 201, 111)!important;
     box-shadow:0 0 0 0.25rem rgba(221, 206, 147, 0.44);
 }
+.accordion-body{
+    font-size:.8em!important;
+}
 
 .safe-search-1::before{
     font-family:"Font Awesome 5 Free";
@@ -11095,9 +11098,6 @@ header {
     width:20px;
     height:20px; 
     margin-right:4px;
-}
-.accordion-body{
-    font-size:.8em!important;
 }
 .safe-search-2::before, .safe-search-3::before{
     font-family:"Font Awesome 5 Free";

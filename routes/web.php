@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
-use App\Http\Controllers\AnnouncementController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\AnnouncementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::post('/annunci/salva', [AnnouncementController::class, 'store'])->name('a
 Route::get('/annunci/show/{announcement}', [AnnouncementController::class, 'show'])->name('announcement.show');
 Route::get('/annunci/modifica/{announcement}', [AnnouncementController::class, 'edit'])->name('announcement.edit');
 Route::put('/annunci/aggiorna/{announcement}', [AnnouncementController::class, 'update'])->name('announcement.update');
-Route::delete('/annunci/aggiorna/{announcement}', [AnnouncementController::class, 'destroy'])->name('announcement.destroy');
+Route::delete('/annunci/elimina/{announcement}', [AnnouncementController::class, 'destroy'])->name('announcement.destroy');
 
 
 //! Rotte utenti
@@ -42,14 +43,17 @@ Route::get('/candidati', [PublicController::class, 'apply'])->name('user.apply')
 Route::post('/candidati/invia', [PublicController::class, 'submit'])->name('application.submit');
 
 
-
 //! Rotte revisore
-Route::get('/revisor/home/{announcement}', [RevisorController::class, 'index'])->name('revisor.panel');
+Route::get('/revisor/home/{announcement?}', [RevisorController::class, 'index'])->name('revisor.panel');
 Route::get('/revisor/dashboard', [RevisorController::class, 'dashboard'])->name('revisor.dashboard');
 Route::post('/revisor/accepted/{id}', [RevisorController::class, 'accept'])->name('revisor.accepted');
 Route::post('/revisor/rejected/{id}', [RevisorController::class, 'reject'])->name('revisor.rejected');
 Route::post('/revisor/undo/{id}', [RevisorController::class, 'undo'])->name('revisor.undo');
-
 Route::get('/search', [PublicController::class, 'search'])->name('search');
-
 Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale');
+
+//! Rotte admin
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+Route::get('/admin/userprofile/{id}', [AdminController::class, 'userprofile'])->name('admin.userprofile');
+Route::patch('/admin/makeRevisor/{id}', [AdminController::class, 'makeRevisor'])->name('admin.makeRevisor');
+Route::patch('/admin/removeRevisor/{id}', [AdminController::class, 'removeRevisor'])->name('admin.removeRevisor');

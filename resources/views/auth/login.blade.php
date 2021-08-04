@@ -8,7 +8,7 @@
                     @csrf
                     <div class="mb-3 mt-5">
                         <label id="mail-login" for="exampleInputEmail1" class="form-label text-main">{{__('ui.email')}}</label>
-                        <input type="email" name="email" class="form-control sign_up_input" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" name="email" value="{{old('email')}}" class="form-control sign_up_input" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label text-main">Password</label>

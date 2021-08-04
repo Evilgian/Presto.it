@@ -97,7 +97,10 @@
               <hr width="75%" class="my-0">
               <div class="col-12">
                 <h4 class="mt-1 text-main">Descrizione</h4>
-                {{$announcement->description}}
+                @php
+                 echo nl2br($announcement->description);
+                    
+                @endphp
               </div>
             </div>
           </div>

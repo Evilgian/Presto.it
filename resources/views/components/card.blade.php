@@ -17,7 +17,7 @@
                 <a href="{{route('announcement.show', $announcement)}}" class="btn btn-card-index">{{__('ui.details')}}</a>
             </div>
             <div class="card-footer bg-white text-end text-muted">
-                {{$announcement->user->name}}
+                <a class="txt-secondary" href="{{route('user.announcements', $announcement->user->id)}}">{{$announcement->user->name}}</a>
             </div>
         </div>
 </div>

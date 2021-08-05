@@ -80,7 +80,7 @@
                         <p><strong class="footnote">e-mail:</strong><br><a href="mailto:{{$user->email}}">{{$user->email}}</a></p>
                         <p><strong class="footnote">ruolo:</strong><br>{{($user->id == 1) ? 'Admin' : ($user->is_revisor ? 'Staff (Revisore)' : 'Utente')}}</p>
                         <p><strong class="footnote">Iscritto dal:</strong><br>{{$user->created_at->format('d/m/Y')}}</p>
-                        <p><strong class="footnote">Annunci pubblicati:</strong><br>{{App\Models\Announcement::where('user_id', $user->id)->count()}}</p>
+                        <p><strong class="footnote">Annunci pubblicati:</strong><br><a class="txt-secondary" href="{{route('user.announcements', $user->id)}}">{{App\Models\Announcement::where('user_id', $user->id)->count()}}</a></p>
                         
                         @if ($user->is_revisor)
                         @php

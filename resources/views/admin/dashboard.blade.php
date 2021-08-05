@@ -80,8 +80,8 @@
                 <h2 class="text-center">Riepilogo</h2>
                 <div class="statistics lead">
                     <p><strong>Totale annunci:</strong> {{App\Models\Announcement::count()}}</p>
-                    <p><strong>Staff:</strong>{{App\Models\User::where('is_revisor', true)->count()-1}}</p>
-                    <p><strong>Totale utenti:</strong> {{App\Models\User::count()}} <span class="text-muted footnote">*include utenti revisori</span></p>
+                    <p><strong>Staff: </strong>{{App\Models\User::where('is_revisor', true)->count()-1}}</p>
+                    <p><strong>Totale utenti:</strong> {{App\Models\User::count()-1}} <span class="text-muted footnote">*include utenti revisori</span></p>
                 </div>
 
             {{-- STAFF --}}

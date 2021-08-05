@@ -1,4 +1,11 @@
           <x-layout>
+              <style>
+            @media screen and (max-width:468px){
+                .squeeze{
+                    font-size:.8em!important;
+                }
+            }
+            </style>
         <form action="{{route('user.update', $user)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('put')
@@ -12,11 +19,11 @@
                     </div>
                     <div class="col-12 col-md-6 col-lg-8 box-edit-user">
                         <div class="row my-3 lead">
-                            <div class="col-3 text-end text-main mb-3"><strong>Username:</strong></div>
-                            <div class="col-9"><input type="text" name="name" class="edit-input" value="{{$user->name}}">  </div>
+                            <div class="col-3 squeeze text-end text-main mb-3"><strong>Name:</strong></div>
+                            <div class="col-9 squeeze"><input type="text" name="name" class="edit-input" value="{{$user->name}}">  </div>
                             
-                            <div class="col-3 text-end text-main"><strong>e-mail:</strong></div>
-                            <div class="col-9"><input type="text" class="edit-input" name="email" value="{{$user->email}}">  </div>
+                            <div class="col-3 squeeze text-end text-main"><strong>email:</strong></div>
+                            <div class="col-9 squeeze"><input type="text" class="edit-input" name="email" value="{{$user->email}}">  </div>
                         </div>
                     </div>
                     <button type="submit" class="w-75 mx-auto mt-5 mb-5 btn btn-edit">Salva Modifiche</button>

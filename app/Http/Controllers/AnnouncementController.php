@@ -214,21 +214,39 @@ class AnnouncementController extends Controller
 
             $i->announcement_id = $announcement->id;
             $i->save();
-            GoogleVisionSafeSearchImage::withChain([
-                new GoogleVisionLabelImage($i->id),
-                new GoogleVisionRemoveFaces($i->id),
-                new Watermark($i->id),
-                new ResizeImage(
+
+            $this->dispatchNow(new GoogleVisionSafeSearchImage($i->id));
+            $this->dispatchNow(new GoogleVisionLabelImage($i->id));
+            $this->dispatchNow(new GoogleVisionRemoveFaces($i->id));
+            $this->dispatchNow(new Watermark($i->id));
+            $this->dispatchNow(new ResizeImage(
                     $i->file,
                 150,
                 150
-                ),
-                new ResizeImage(
+                ));
+            $this->dispatchNow(new ResizeImage(
                     $i->file,
                     500,
                     500
-                )
-            ])->dispatch($i->id);
+            ));
+
+
+
+            // GoogleVisionSafeSearchImage::withChain([
+            //     new GoogleVisionLabelImage($i->id),
+            //     new GoogleVisionRemoveFaces($i->id),
+            //     new Watermark($i->id),
+            //     new ResizeImage(
+            //         $i->file,
+            //     150,
+            //     150
+            //     ),
+            //     new ResizeImage(
+            //         $i->file,
+            //         500,
+            //         500
+            //     )
+            // ])->dispatch($i->id);
         }
 
         if($request->input('remove')){            
